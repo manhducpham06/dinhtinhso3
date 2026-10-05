@@ -1,0 +1,2476 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark lock-scroll">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện đề Ngữ văn ĐGNL - Đề số 3</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%93%96%3C/text%3E%3C/svg%3E">
+    <link rel="icon" href="meo.jpg" type="image/jpg">
+
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        // Giấy kem (thay slate): 50-600 là màu chữ (mực nâu), 700-950 là nền / viền sáng
+                        slate: {50:'#180f0e',100:'#2f1d17',200:'#3f2a22',300:'#5a4338',400:'#7a6256',500:'#86705f',600:'#a8937f',700:'#e0cfb5',800:'#efe2cf',900:'#ffffff',950:'#fbf6ee'},
+                        // Đỏ gạch / garnet (thay indigo) - màu chủ đạo
+                        indigo: {50:'#fdf1ed',100:'#fbe0d7',200:'#8a2616',300:'#8a2616',400:'#a8321f',500:'#c8452f',600:'#a8321f',700:'#8a2616',800:'#6b1d12',900:'#4a140d',950:'#fdf1ed'},
+                        purple: {300:'#e3a3a9',400:'#c96b78',500:'#a8384c',600:'#8c2a3c',700:'#6e1f2f',800:'#511723'},
+                        // Vàng đồng (thay pink) - điểm nhấn, đậm hơn để đọc được trên nền sáng
+                        pink: {300:'#9a6412',400:'#b8801f',500:'#c98a2b',600:'#a56d1d'},
+                        emerald: {200:'#0a6b49',400:'#0b7a55',500:'#10b981',600:'#059669',950:'#e7f8ef'},
+                        rose: {200:'#9f1d33',400:'#cc2a45',500:'#f43f5e',600:'#e11d48',950:'#fdecee'},
+                        amber: {300:'#a56d1d',400:'#b7791f'},
+                        teal: {400:'#0f8a80'},
+                    },
+                    fontFamily: {
+                        sans: ['"Be Vietnam Pro"', 'system-ui', 'sans-serif'],
+                        display: ['"Playfair Display"', 'Georgia', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- KaTeX CDN for mathematical formulas -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Canvas Confetti CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <style>
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #180f0e; }
+        ::-webkit-scrollbar-thumb { background: #5a4338; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #a8321f; }
+
+        body {
+            background-color: #180f0e;
+            background-image:
+                radial-gradient(900px 500px at 8% -10%, rgba(168, 50, 31, 0.20), transparent 60%),
+                radial-gradient(800px 500px at 100% 0%, rgba(201, 138, 43, 0.10), transparent 55%),
+                radial-gradient(700px 600px at 50% 110%, rgba(110, 31, 47, 0.18), transparent 60%);
+            background-attachment: fixed;
+        }
+        h1, h2, h3, .font-display { font-family: 'Playfair Display', Georgia, serif; }
+        h2 { letter-spacing: 0.02em; }
+
+        /* Header: viền vàng đồng mảnh bên dưới */
+        header.sticky { position: sticky; background: linear-gradient(180deg, rgba(39,27,26,.96), rgba(24,15,14,.92)) !important; border-bottom: 1px solid rgba(201,138,43,.28) !important; }
+        header.sticky::after { content:''; position:absolute; left:0; right:0; bottom:-1px; height:1px; background: linear-gradient(90deg, transparent, #c98a2b, transparent); opacity:.7; }
+
+        .glass-card {
+            background: linear-gradient(160deg, rgba(56, 41, 42, 0.82), rgba(39, 27, 26, 0.82));
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 169, 77, 0.12);
+            box-shadow: 0 10px 30px -12px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,235,210,.05);
+        }
+        #questionsContainer > .glass-card { position: relative; border-left: 3px solid #a8321f; }
+        #questionsContainer > .glass-card:hover { border-color: rgba(226,169,77,.35); border-left-color: #e2a94d; transform: translateY(-1px); }
+
+        .hero-banner {
+            background:
+                linear-gradient(135deg, rgba(138,38,22,.92) 0%, rgba(110,31,47,.92) 55%, rgba(74,20,13,.95) 100%);
+            border: 1px solid rgba(226,169,77,.35);
+            position: relative; overflow: hidden;
+        }
+        .hero-banner::before {
+            content:''; position:absolute; inset:0;
+            background: repeating-linear-gradient(45deg, rgba(255,235,210,.035) 0 2px, transparent 2px 14px);
+            pointer-events:none;
+        }
+        .hero-banner::after {
+            content:''; position:absolute; right:-60px; top:-60px; width:220px; height:220px; border-radius:50%;
+            background: radial-gradient(circle, rgba(226,169,77,.35), transparent 70%); pointer-events:none;
+        }
+        .hero-chip { background: rgba(24,15,14,.45); border: 1px solid rgba(240,205,138,.25); }
+
+        .math-content .katex { font-size: 1.05em; }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 12px rgba(200, 69, 47, 0.25); }
+            50% { box-shadow: 0 0 24px rgba(226, 169, 77, 0.45); }
+        }
+        .active-timer { animation: pulseGlow 2.4s infinite; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+        .animate-fadeIn { animation: fadeIn .45s ease both; }
+
+        select, input { color-scheme: light; }
+        button { cursor: pointer; }
+        .ic { width: 1em; height: 1em; display: inline-block; vertical-align: -0.125em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+        .math-content .katex { font-size: 1.1em; }
+        .math-content strong { color: #f0cd8a; font-weight: 700; }
+        @media (min-width: 1024px) {
+            aside.lg\:col-span-4 { position: sticky; top: 5.25rem; align-self: start; max-height: calc(100vh - 6.5rem); overflow-y: auto; padding-right: 4px; }
+        }
+        #questionsContainer > .glass-card { padding-top: 1.5rem; }
+        .opt-btn { min-height: 64px; }
+        .flag-btn { display:inline-flex; align-items:center; gap:.4rem; padding:.35rem .75rem; font-size:11px; font-weight:700; border-radius:.75rem; border:1px solid rgba(226,169,77,.35); color:#e2a94d; background:rgba(201,138,43,.08); transition:all .15s; }
+        .flag-btn:hover { background:rgba(201,138,43,.2); }
+        .flag-btn.on { background:linear-gradient(90deg,#c98a2b,#a8321f); color:#fff; border-color:rgba(240,205,138,.6); box-shadow:0 4px 14px -6px rgba(201,138,43,.7); }
+        .m-flag { position:relative; }
+        .m-flag::after { content:''; position:absolute; top:-3px; right:-3px; width:9px; height:9px; border-radius:50%; background:#e2a94d; border:2px solid #271b1a; }
+        #questionsContainer > .glass-card.is-flagged { border-left-color:#e2a94d; background:linear-gradient(160deg, rgba(201,138,43,.12), rgba(39,27,26,.85)); }
+        .music-btn.playing { border-color: rgba(226,169,77,.8); box-shadow: 0 0 16px -2px rgba(226,169,77,.55); }
+        .eq { display: none; align-items: flex-end; gap: 2px; height: 14px; }
+        .music-btn.playing .eq { display: inline-flex; }
+        .eq i { display: block; width: 3px; height: 30%; background: currentColor; border-radius: 2px; animation: eqbar .9s ease-in-out infinite; }
+        .eq i:nth-child(2) { animation-delay: .2s; }
+        .eq i:nth-child(3) { animation-delay: .4s; }
+        @keyframes eqbar { 0%, 100% { height: 25%; } 50% { height: 100%; } }
+        .mode-btn { padding: .45rem .25rem; font-size: 11px; font-weight: 700; line-height: 1.25; text-align: center; border-radius: .75rem; border: 1px solid #4e3c33; background: rgba(24,15,14,.55); color: #d3c0ae; transition: all .15s; }
+        .mode-btn span { font-weight: 500; font-size: 10px; opacity: .8; }
+        .mode-btn:hover { border-color: rgba(226,169,77,.5); }
+        .mode-btn.active { background: linear-gradient(135deg, #a8321f, #8a2616); color: #fff; border-color: rgba(240,205,138,.6); }
+        .short-input { width: 100%; max-width: 28rem; padding: .85rem 1rem; font-size: 1.15rem; font-weight: 700; letter-spacing: .02em; color: #fbe4dc; background: rgba(24,15,14,.7); border: 1.5px solid #6b5648; border-radius: 1rem; outline: none; transition: all .15s; }
+        .short-input::placeholder { color: #8c7766; font-weight: 500; font-size: .95rem; letter-spacing: 0; }
+        .short-input:focus { border-color: #e2a94d; box-shadow: 0 0 0 3px rgba(226,169,77,.25); }
+        .short-input.ok { border-color: #10b981; color: #a7f3d0; background: rgba(2,44,34,.6); }
+        .short-input.bad { border-color: #f43f5e; color: #fecdd3; background: rgba(76,5,25,.5); }
+        .start-card { background: linear-gradient(160deg, rgba(110,31,47,.6), rgba(39,27,26,.94) 55%, rgba(24,15,14,.97)); box-shadow: inset 0 0 0 1px rgba(226,169,77,.22); }
+        .start-card::before { content:''; position:absolute; inset:0; background: repeating-linear-gradient(45deg, rgba(255,235,210,.03) 0 2px, transparent 2px 14px); pointer-events:none; }
+        .start-card::after { content:''; position:absolute; right:-160px; top:-160px; width:520px; height:520px; border-radius:50%; background: radial-gradient(circle, rgba(226,169,77,.26), transparent 70%); pointer-events:none; }
+        .start-stat { background: rgba(24,15,14,.6); border: 1px solid rgba(240,205,138,.25); border-radius: 1.25rem; padding: 1.1rem .75rem; backdrop-filter: blur(4px); }
+        .start-btn { background: linear-gradient(90deg, #c98a2b, #a8321f 60%, #8a2616); color: #fff; font-weight: 800; letter-spacing: .06em; border: 1px solid rgba(240,205,138,.55); border-radius: 1.25rem; padding: 1.15rem 3.5rem; box-shadow: 0 12px 30px -10px rgba(201,138,43,.75); transition: transform .15s, filter .15s; animation: startGlow 2.4s infinite; }
+        .start-btn:hover { transform: translateY(-2px) scale(1.02); filter: brightness(1.1); }
+        .start-btn:active { transform: scale(.98); }
+        @keyframes startGlow { 0%,100% { box-shadow: 0 12px 30px -10px rgba(201,138,43,.6); } 50% { box-shadow: 0 12px 44px -6px rgba(226,169,77,.95); } }
+
+        .hero-icon { box-shadow: 0 0 0 8px rgba(240,205,138,.08), 0 0 0 18px rgba(240,205,138,.04), 0 20px 50px -10px rgba(200,69,47,.7); }
+        .hero-eyebrow { display:flex; align-items:center; justify-content:center; gap:1rem; }
+        .hero-eyebrow em { font-style:normal; font-weight:600; font-size:.75rem; letter-spacing:.3em; text-transform:uppercase; color:#f0cd8a; white-space:nowrap; }
+        .hero-eyebrow span { height:1px; width:clamp(1.5rem,8vw,5rem); background:linear-gradient(90deg, transparent, rgba(240,205,138,.7)); }
+        .hero-eyebrow span:last-child { transform:scaleX(-1); }
+        @media (min-width:640px){ .hero-eyebrow em { font-size:.875rem; } }
+        @media (max-width:639px){ .hero-eyebrow em { white-space:normal; letter-spacing:.2em; } }
+        .start-title { text-wrap: balance; }
+        .hero-orn { display:flex; justify-content:center; }
+        .hero-orn i { display:block; width:min(14rem,50%); height:1px; background:linear-gradient(90deg, transparent, rgba(240,205,138,.8), transparent); position:relative; }
+        .hero-orn i::after { content:''; position:absolute; left:50%; top:50%; width:8px; height:8px; background:#f0cd8a; transform:translate(-50%,-50%) rotate(45deg); box-shadow:0 0 12px rgba(240,205,138,.8); }
+        .hero-feat { display:flex; align-items:center; gap:.9rem; text-align:left; padding:1rem 1.1rem; border-radius:1.25rem; background:rgba(24,15,14,.55); border:1px solid rgba(240,205,138,.22); backdrop-filter:blur(4px); transition:transform .2s, border-color .2s; }
+        .hero-feat:hover { transform:translateY(-3px); border-color:rgba(240,205,138,.5); }
+        .hero-feat-ic { flex:none; width:2.75rem; height:2.75rem; border-radius:.9rem; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, rgba(200,69,47,.35), rgba(201,138,43,.25)); border:1px solid rgba(240,205,138,.3); }
+        .hero-feat p { font-size:.95rem; line-height:1.45; color:#e8dccf; }
+        .hero-feat b { color:#f0cd8a; }
+
+        .passage-box { background: rgba(24,15,14,.55); border: 1px solid rgba(240,205,138,.25); border-left: 3px solid #e2a94d; border-radius: .9rem; padding: .9rem 1.1rem; margin: .25rem 0 .75rem; font-size: .95rem; line-height: 1.75; color: #e8dccf; font-style: italic; }
+        .passage-box p { margin: 0 0 .55rem; }
+        .passage-box p:last-child { margin-bottom: 0; }
+        .passage-box .pcite { text-align: right; font-size: .85rem; color: #b9a690; font-style: normal; }
+        .passage-label { font-style: normal; font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #f0cd8a; margin-bottom: .45rem; }
+        .passage-fold summary { cursor: pointer; font-style: normal; font-size: .8rem; font-weight: 600; color: #f0cd8a; }
+        .passage-fold[open] summary { margin-bottom: .6rem; }
+
+        /* ===== GIAO DIỆN SÁNG: giấy kem, mực nâu, điểm nhấn đỏ garnet và vàng đồng ===== */
+        ::-webkit-scrollbar-track { background: #f3e9dc; }
+        ::-webkit-scrollbar-thumb { background: #d7c3aa; }
+        body {
+            background-color: #fbf6ee;
+            background-image:
+                radial-gradient(900px 500px at 8% -10%, rgba(168,50,31,.08), transparent 60%),
+                radial-gradient(800px 500px at 100% 0%, rgba(201,138,43,.16), transparent 55%),
+                radial-gradient(700px 600px at 50% 110%, rgba(168,50,31,.07), transparent 60%);
+        }
+        header.sticky { background: rgba(255,252,247,.94) !important; border-bottom: 1px solid rgba(201,138,43,.4) !important; box-shadow: 0 10px 26px -20px rgba(90,50,30,.55) !important; }
+        .glass-card { background: #fff; backdrop-filter: none; border: 1px solid #eadcc8; box-shadow: 0 16px 36px -24px rgba(110,60,30,.4), 0 2px 6px -2px rgba(110,60,30,.08); }
+        #questionsContainer > .glass-card:hover { border-color: rgba(201,138,43,.55); box-shadow: 0 20px 40px -22px rgba(110,60,30,.45); }
+        #questionsContainer > .glass-card.is-flagged { background: linear-gradient(160deg, #fff4dc, #fff); }
+        .m-flag::after { border-color: #fff; }
+        .bg-slate-950\/80 { background-color: rgba(58,36,28,.45) !important; }
+
+        .hero-banner { box-shadow: 0 22px 44px -26px rgba(138,38,22,.7); }
+        .hero-banner .text-pink-300, .hero-banner .text-pink-400 { color: #f0cd8a; }
+        .hero-banner [class*="text-slate-"] { color: #f8ecdc; }
+        .hero-chip { background: rgba(255,255,255,.12); border-color: rgba(240,205,138,.45); }
+
+        .math-content strong { color: #8a2616; }
+        .flag-btn { color: #96601a; background: #fff6e2; border-color: rgba(201,138,43,.5); }
+        .flag-btn:hover { background: #ffecc4; }
+        .mode-btn { border-color: #e4d3bb; background: #fff; color: #5a4338; }
+        .short-input { color: #2f1d17; background: #fff; border-color: #d9c4a6; }
+        .short-input::placeholder { color: #a8937f; }
+
+        .passage-box { background: #fff8ec; border-color: #ecd9b8; border-left-color: #c98a2b; color: #4a362d; box-shadow: 0 8px 20px -16px rgba(110,60,30,.4); }
+        .passage-label, .passage-fold summary { color: #8a2616; }
+        .passage-box .pcite { color: #86705f; }
+
+        /* Màn hình mở đầu */
+        .start-card { background: linear-gradient(160deg, #fffaf2 0%, #faeedb 55%, #f4e0c3 100%); box-shadow: inset 0 0 0 1px rgba(201,138,43,.35); }
+        .start-card::before { background: repeating-linear-gradient(45deg, rgba(120,70,30,.035) 0 2px, transparent 2px 14px); }
+        .start-card::after { background: radial-gradient(circle, rgba(201,138,43,.30), transparent 70%); }
+        .start-title .text-pink-300 { color: #a8321f; }
+        .hero-icon { box-shadow: 0 0 0 8px rgba(201,138,43,.14), 0 0 0 18px rgba(201,138,43,.07), 0 22px 44px -12px rgba(168,50,31,.55); }
+        .hero-eyebrow em { color: #8a5a12; }
+        .hero-eyebrow span { background: linear-gradient(90deg, transparent, rgba(165,109,29,.8)); }
+        .hero-orn i { background: linear-gradient(90deg, transparent, rgba(165,109,29,.85), transparent); }
+        .hero-orn i::after { background: #c98a2b; box-shadow: 0 0 10px rgba(201,138,43,.6); }
+        .hero-feat { background: #fff; border-color: #ecd9b8; box-shadow: 0 12px 26px -18px rgba(110,60,30,.5); backdrop-filter: none; }
+        .hero-feat:hover { border-color: rgba(201,138,43,.7); }
+        .hero-feat p { color: #4a362d; }
+        .hero-feat b { color: #a8321f; }
+        .hero-feat-ic { background: linear-gradient(135deg, #fdeae3, #fdf0d8); border-color: #f0d3b4; }
+
+        /* Thẻ trích dẫn */
+        .quote-card { position: relative; overflow: hidden; padding: 1.5rem 1.4rem 1.1rem; border-radius: 1.4rem; background: linear-gradient(160deg, #fffaf0 0%, #fff1d9 100%); border: 1px solid #ecd3a4; box-shadow: 0 18px 38px -24px rgba(138,38,22,.45); }
+        .quote-card::before { content:''; position:absolute; left:0; top:0; bottom:0; width:5px; background: linear-gradient(180deg, #c98a2b, #a8321f); }
+        .quote-card::after { content:''; position:absolute; right:-40px; bottom:-40px; width:150px; height:150px; border-radius:50%; background: radial-gradient(circle, rgba(201,138,43,.22), transparent 70%); pointer-events:none; }
+        .quote-mark { position:absolute; right:1rem; top:-.35rem; font-family:'Playfair Display', Georgia, serif; font-size:6rem; line-height:1; color:rgba(168,50,31,.13); pointer-events:none; }
+        .quote-label { font-size:.68rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:#a56d1d; margin-bottom:.6rem; }
+        .quote-text { font-family:'Playfair Display', Georgia, serif; font-style:italic; font-weight:600; font-size:1.2rem; line-height:1.55; color:#3a1d16; position:relative; z-index:1; }
+        .quote-foot { display:flex; align-items:center; gap:.6rem; margin-top:.95rem; }
+        .quote-line { width:1.6rem; height:2px; border-radius:2px; background:#c98a2b; }
+        .quote-author { font-size:.8rem; font-weight:700; color:#8a2616; flex:1; }
+        .quote-next { width:2rem; height:2rem; border-radius:.7rem; display:inline-flex; align-items:center; justify-content:center; color:#a8321f; background:rgba(255,255,255,.75); border:1px solid #ecd3a4; transition: transform .25s, background .15s; }
+        .quote-next:hover { background:#fff; transform: rotate(180deg); }
+        .quote-card.swap .quote-text, .quote-card.swap .quote-author { animation: fadeIn .5s ease both; }
+
+        /* Cố định màn hình, không kéo ngang */
+        html, body { overflow-x: clip; max-width: 100%; }
+        #startScreen { overflow-x: hidden; }
+        .start-card { overflow: hidden; }
+
+        /* Dòng số câu đúng trong bảng kết quả */
+        .score-frac { font-family:'Playfair Display', Georgia, serif; font-size:1.35rem; font-weight:700; color:#3a1d16; padding-top:.2rem; }
+        .score-frac b { color:#0b7a55; font-size:1.7rem; }
+        .score-frac span { color:#a8937f; margin:0 .15rem; }
+        .score-frac em { font-family:'Be Vietnam Pro', system-ui, sans-serif; font-style:normal; font-size:.8rem; font-weight:600; color:#7a6256; margin-left:.3rem; letter-spacing:.02em; }
+        .score-bar { height:.45rem; border-radius:999px; background:#efe2cf; overflow:hidden; margin:.6rem auto .2rem; max-width:16rem; }
+        .score-bar i { display:block; height:100%; border-radius:999px; background:linear-gradient(90deg,#10b981,#0b7a55); transition:width .8s ease; }
+
+        /* Thẻ điểm kết quả */
+        .score-card { position:relative; overflow:hidden; text-align:center; padding:1.4rem 1.2rem 1.2rem; border-radius:1.4rem; background: linear-gradient(170deg, #fffaf0 0%, #fff1d9 100%); border:1px solid #ecd3a4; box-shadow: inset 0 1px 0 #fff; }
+        .score-card::after { content:''; position:absolute; right:-60px; top:-60px; width:180px; height:180px; border-radius:50%; background: radial-gradient(circle, rgba(201,138,43,.25), transparent 70%); pointer-events:none; }
+        .score-eyebrow { display:flex; align-items:center; justify-content:center; gap:.7rem; position:relative; z-index:1; }
+        .score-eyebrow em { font-style:normal; font-size:.68rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:#8a5a12; }
+        .score-eyebrow span { height:1px; width:2.2rem; background:linear-gradient(90deg, transparent, rgba(165,109,29,.7)); }
+        .score-eyebrow span:last-child { transform:scaleX(-1); }
+        .score-ring { position:relative; width:10rem; height:10rem; margin:.9rem auto .6rem; z-index:1; }
+        .score-ring svg { width:100%; height:100%; display:block; filter: drop-shadow(0 8px 14px rgba(168,50,31,.25)); }
+        .ring-track { fill:#fff; stroke:#efe2cf; stroke-width:12; }
+        .ring-fill { fill:none; stroke:url(#ringGrad); stroke-width:12; stroke-linecap:round; transition: stroke-dashoffset 1.3s cubic-bezier(.22,.8,.3,1); }
+        .ring-center { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+        .ring-num { font-family:'Playfair Display', Georgia, serif; font-weight:800; font-size:3.1rem; line-height:1; color:#3a1d16; }
+        .ring-den { margin-top:.2rem; font-size:.8rem; font-weight:600; color:#86705f; }
+        .score-rank-row { display:flex; align-items:center; justify-content:center; gap:.6rem; position:relative; z-index:1; }
+        .score-rank { padding:.3rem .9rem; border-radius:999px; font-size:.75rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:#fff; background:#a8937f; }
+        .score-rank.t1 { background:linear-gradient(90deg,#10b981,#0b7a55); }
+        .score-rank.t2 { background:linear-gradient(90deg,#2aa39a,#0f8a80); }
+        .score-rank.t3 { background:linear-gradient(90deg,#d9962f,#b7791f); }
+        .score-rank.t4 { background:linear-gradient(90deg,#e0813a,#c8452f); }
+        .score-rank.t5 { background:linear-gradient(90deg,#c8452f,#a8321f); }
+        .score-pct { font-size:.8rem; font-weight:700; color:#7a6256; }
+        .score-card #scoreGrade { position:relative; z-index:1; margin-top:.5rem; }
+        .sec-bars { position:relative; z-index:1; margin-top:1rem; padding-top:.9rem; border-top:1px dashed #e6cfa4; display:grid; gap:.7rem; text-align:left; }
+        .sec-top { display:flex; justify-content:space-between; align-items:baseline; font-size:.78rem; font-weight:600; color:#4a362d; }
+        .sec-top small { font-weight:500; color:#8c7766; }
+        .sec-top b { color:#8a2616; font-weight:800; }
+        .sec-track { height:.4rem; border-radius:999px; background:#f0e2c9; overflow:hidden; margin-top:.3rem; }
+        .sec-track i { display:block; height:100%; border-radius:999px; background:linear-gradient(90deg,#d9962f,#a8321f); transition:width .9s ease; }
+
+        /* ===== MÀN HÌNH CHÍNH: vừa khít 1 màn hình, không cuộn ===== */
+        html.lock-scroll, body.overflow-hidden { overflow: hidden !important; height: 100%; }
+        #startScreen { overflow: hidden !important; height: 100vh; height: 100dvh; }
+        #startScreen .start-card { height: 100%; min-height: 0 !important; padding: clamp(.6rem, 3vh, 2.5rem) 1.25rem !important; justify-content: center; }
+        #startScreen .start-card > div:first-child { gap: clamp(.55rem, 2.6vh, 2.5rem) !important; }
+        #startScreen .space-y-4 > * + *, #startScreen .sm\:space-y-6 > * + * { margin-top: clamp(.35rem, 1.7vh, 1.5rem) !important; }
+        #startScreen .hero-icon { width: clamp(3rem, 11vh, 6rem) !important; height: clamp(3rem, 11vh, 6rem) !important; }
+        #startScreen .hero-icon svg { font-size: clamp(1.6rem, 5.5vh, 3rem) !important; }
+        #startScreen .start-title { font-size: clamp(1.8rem, 8.5vh, 4.5rem) !important; }
+        #startScreen .start-card p.text-base { font-size: clamp(.85rem, 2.4vh, 1.25rem) !important; }
+        #startScreen .hero-feat { padding: clamp(.45rem, 1.7vh, 1rem) 1rem; }
+        #startScreen .hero-feat p { font-size: clamp(.72rem, 1.9vh, .95rem); }
+        #startScreen .hero-feat-ic { width: clamp(2rem, 5.5vh, 2.75rem); height: clamp(2rem, 5.5vh, 2.75rem); }
+        #startScreen .start-btn { padding: clamp(.65rem, 2.2vh, 1.15rem) clamp(1.5rem, 5vw, 3.5rem); font-size: clamp(1rem, 3vh, 1.5rem); }
+        #startScreen .start-card > div.mt-10 { margin-top: clamp(.4rem, 2vh, 2.5rem) !important; }
+        @media (max-width: 767px) { #startScreen .hero-feat-ic { display: none; } #startScreen .hero-feat { padding: .4rem .8rem; } }
+
+        /* ===== BẢNG KẾT QUẢ: ngang + toàn màn hình ===== */
+        #resultModal { padding: 0 !important; align-items: stretch !important; background: #fdf3e3 !important; backdrop-filter: none !important; }
+        #resultModal > .result-scale { width: 100%; height: 100%; max-width: none !important; border: 0 !important; border-radius: 0 !important; box-shadow: none !important; padding: 0 !important; background: transparent !important; position: relative; overflow: hidden; }
+        .result-land { position: absolute; inset: 0; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(.8rem, 3vw, 2.5rem); padding: clamp(.8rem, 3.5vh, 2.2rem) clamp(1rem, 4vw, 3rem); overflow: hidden; background: radial-gradient(700px 400px at 100% 0%, rgba(201,138,43,.18), transparent 60%), linear-gradient(160deg, #fffaf0, #fbe9cf); }
+        .result-left, .result-right { min-height: 0; display: flex; flex-direction: column; justify-content: center; gap: clamp(.5rem, 1.8vh, 1.1rem); }
+        .result-left .score-card { padding: clamp(.6rem, 2vh, 1.4rem) 1rem; }
+        .result-left .score-ring { width: clamp(6rem, 30vh, 11rem); height: clamp(6rem, 30vh, 11rem); margin: clamp(.3rem, 1.2vh, .9rem) auto; }
+        .result-left .ring-num { font-size: clamp(1.8rem, 8vh, 3.4rem); }
+        .result-right .sec-bars { margin-top: 0; padding: clamp(.6rem, 2vh, 1.2rem); border: 1px dashed #e6cfa4; border-radius: 1.2rem; background: rgba(255,255,255,.55); }
+        .result-right .result-actions button { padding: clamp(.6rem, 2vh, .9rem) 0; font-size: clamp(.75rem, 2vh, .95rem); }
+        .result-head h2 { font-size: clamp(1.2rem, 4.5vh, 2rem); }
+        .result-head .head-ic { width: clamp(2.6rem, 9vh, 4rem); height: clamp(2.6rem, 9vh, 4rem); margin-bottom: .25rem; }
+        @media (max-height: 420px) { .result-land { overflow-y: auto; } }
+        /* Điện thoại đang cầm dọc: xoay bố cục 90° để hiển thị ngang */
+        @media (orientation: portrait) and (max-width: 900px) {
+            .result-land { inset: auto; top: 0; left: 100%; width: 100vh; width: 100dvh; height: 100vw; height: 100dvw; transform-origin: top left; transform: rotate(90deg); }
+        }
+
+        /* Bản đồ bài làm (thay cho dòng xếp loại) */
+        .amap { position:relative; z-index:1; margin-top:clamp(.3rem,1.4vh,.9rem); padding-top:clamp(.4rem,1.4vh,.8rem); border-top:1px dashed #e6cfa4; }
+        .amap-title { display:flex; align-items:center; justify-content:center; gap:.6rem; margin-bottom:clamp(.3rem,1.2vh,.6rem); }
+        .amap-title em { font-style:normal; font-size:.66rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:#8a5a12; }
+        .amap-title span { height:1px; width:1.6rem; background:linear-gradient(90deg, transparent, rgba(165,109,29,.7)); }
+        .amap-title span:last-child { transform:scaleX(-1); }
+        .amap-grid { display:grid; grid-template-columns:repeat(10, minmax(0,1fr)); gap:clamp(.18rem,.7vh,.35rem); max-width:21rem; margin:0 auto; }
+        .amap-grid b { display:flex; align-items:center; justify-content:center; aspect-ratio:1; border-radius:.4rem; font-size:clamp(.5rem,1.6vh,.68rem); font-weight:800; color:#fff; opacity:0; transform:scale(.6); animation:amapIn .35s ease forwards; }
+        .amap-grid b.ok { background:linear-gradient(135deg,#10b981,#0b7a55); }
+        .amap-grid b.bad { background:linear-gradient(135deg,#e0613a,#a8321f); }
+        .amap-grid b.skip { background:#eadcc8; color:#8c7766; }
+        @keyframes amapIn { to { opacity:1; transform:scale(1); } }
+        .amap-legend { display:flex; align-items:center; justify-content:center; gap:.35rem; margin-top:clamp(.3rem,1.2vh,.6rem); font-size:.7rem; font-weight:600; color:#7a6256; }
+        .amap-legend i { width:.7rem; height:.7rem; border-radius:.25rem; display:inline-block; margin-left:.6rem; }
+        .amap-legend i:first-child { margin-left:0; }
+        .amap-legend i.ok { background:#10b981; } .amap-legend i.bad { background:#c8452f; } .amap-legend i.skip { background:#eadcc8; }
+
+        /* Khoá cuộn trang nền khi bảng kết quả đang mở */
+        html.result-open, html.result-open body { overflow: hidden !important; height: 100%; overscroll-behavior: none; }
+        #resultModal { height: 100vh; height: 100dvh; overscroll-behavior: contain; touch-action: none; }
+        #resultModal .result-land { touch-action: pan-y; }
+
+        /* Vòng điểm: "điểm / tổng" cùng một dòng, cân giữa vòng */
+        .ring-center { align-items:center; justify-content:center; }
+        .ring-line { display:flex; align-items:baseline; justify-content:center; gap:.12rem; line-height:1; }
+        .ring-line .ring-num { line-height:1; }
+        .ring-line .ring-den { margin:0; font-family:'Playfair Display', Georgia, serif; font-weight:700; font-size:clamp(1rem, 3.6vh, 1.6rem); color:#a07b5d; letter-spacing:.01em; }
+
+        /* Vòng điểm: số liền nhau, chữ số cùng chiều cao */
+        .ring-line .ring-num, .ring-line .ring-den { font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; }
+        .ring-line .ring-den { font-family: inherit; font-weight: 700; font-size: clamp(1.05rem, 3.8vh, 1.7rem); color: #a98263; }
+        .ring-line { gap: .22rem; transform: translateY(-1px); }
+
+        /* Tab Tổng quan / Phân tích điểm yếu */
+        .result-right { justify-content: flex-start !important; }
+        .result-right .result-actions { margin-top: auto; }
+        .rtabs { display: flex; gap: .3rem; padding: .25rem; background: rgba(255,255,255,.65); border: 1px solid #ecd9b8; border-radius: 999px; }
+        .rtabs button { flex: 1; padding: clamp(.4rem, 1.5vh, .6rem) .8rem; border-radius: 999px; font-weight: 700; font-size: clamp(.74rem, 1.9vh, .9rem); color: #8a5a12; transition: all .2s; }
+        .rtabs button.on { color: #fff; background: linear-gradient(135deg, #c98a2b, #a8321f); box-shadow: 0 6px 14px -8px rgba(168,50,31,.7); }
+        .rtab { display: flex; flex-direction: column; gap: clamp(.5rem, 1.8vh, 1.1rem); min-height: 0; }
+        .rtab[hidden] { display: none; }
+        #tabWeak { flex: 1 1 auto; overflow: hidden; }
+        .weak-box { flex: 1 1 auto; min-height: 0; overflow-y: auto; padding-right: .3rem; display: flex; flex-direction: column; gap: clamp(.4rem, 1.3vh, .7rem); scrollbar-width: thin; scrollbar-color: #d9b878 transparent; }
+        .wk-head { padding: clamp(.55rem, 1.7vh, .9rem) 1rem; border-radius: 1rem; background: linear-gradient(135deg, #fff3da, #fde3c4); border: 1px solid #ecd2a2; font-size: clamp(.78rem, 2vh, .95rem); line-height: 1.5; color: #5a3a2c; }
+        .wk-head b { color: #a8321f; }
+        .wk-row { padding: clamp(.45rem, 1.4vh, .75rem) .9rem; border-radius: .9rem; background: rgba(255,255,255,.7); border: 1px solid #efdfc3; }
+        .wk-top { display: flex; align-items: center; gap: .5rem; }
+        .wk-name { flex: 1; font-weight: 700; font-size: clamp(.76rem, 1.95vh, .92rem); color: #3a1d16; }
+        .wk-badge { font-size: .62rem; font-weight: 800; letter-spacing: .04em; padding: .15rem .5rem; border-radius: 999px; white-space: nowrap; }
+        .wk-badge.bad { background: #fbe0d8; color: #a8321f; } .wk-badge.mid { background: #fdeccb; color: #9a6410; } .wk-badge.good { background: #d9f2e6; color: #0b7a55; }
+        .wk-score { font-weight: 800; font-size: .85rem; color: #6b4a3a; min-width: 3.2rem; text-align: right; }
+        .wk-bar { height: .45rem; border-radius: 999px; background: #f0e4d0; overflow: hidden; margin-top: .35rem; }
+        .wk-bar i { display: block; height: 100%; border-radius: 999px; width: 0; transition: width .8s cubic-bezier(.2,.8,.2,1); }
+        .wk-bar i.bad { background: linear-gradient(90deg, #e0613a, #a8321f); } .wk-bar i.mid { background: linear-gradient(90deg, #e2a94d, #c98a2b); } .wk-bar i.good { background: linear-gradient(90deg, #34c08b, #0b7a55); }
+        .wk-tip { margin-top: .4rem; font-size: clamp(.7rem, 1.7vh, .8rem); color: #7a6256; line-height: 1.45; }
+        .wk-chips { margin-top: .4rem; display: flex; flex-wrap: wrap; gap: .25rem; align-items: center; font-size: .72rem; color: #86705f; }
+        .wk-chips button { min-width: 1.7rem; padding: .1rem .4rem; border-radius: .4rem; font-weight: 800; font-size: .72rem; color: #fff; background: linear-gradient(135deg, #e0613a, #a8321f); }
+        .wk-chips button.skip { background: #eadcc8; color: #7a6256; }
+        .wk-chips button:hover { filter: brightness(1.08); transform: translateY(-1px); }
+        .wk-empty { padding: 1.2rem; text-align: center; color: #86705f; font-size: .9rem; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans flex flex-col antialiased selection:bg-indigo-600 selection:text-white">
+    <!-- Màn hình chính: sẵn sàng làm bài (phủ toàn màn hình) -->
+    <div id="startScreen" class="fixed inset-0 z-[60] overflow-y-auto bg-slate-950 animate-fadeIn">
+        <div class="start-card relative w-full min-h-full flex flex-col items-center justify-center px-5 sm:px-12 py-10 text-center">
+            <div class="relative z-10 w-full max-w-6xl mx-auto flex flex-col items-center gap-7 sm:gap-10">
+                <div class="hero-icon w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-gradient-to-tr from-indigo-700 via-indigo-500 to-pink-500 flex items-center justify-center shadow-2xl shadow-indigo-900/60 ring-1 ring-pink-300/50">
+                    <svg class="ic text-4xl sm:text-5xl text-white" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                </div>
+                <div class="space-y-4 sm:space-y-6">
+                    <div class="hero-eyebrow"><span></span><em>Phòng luyện Ngữ văn</em><span></span></div>
+                    <h1 class="start-title font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold text-slate-100 leading-[1.1]"><span class="block">Luyện đề Ngữ văn</span><span class="block text-pink-300">Đánh giá năng lực</span></h1>
+                    <div class="hero-orn"><i></i></div>
+                    <p class="text-base sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">Đọc hiểu · Ngôn ngữ · Văn học · đáp án và lời giải sau khi nộp bài</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-5 w-full max-w-5xl mx-auto"><div class="hero-feat"><div class="hero-feat-ic"><svg class="ic text-pink-300 text-xl" viewBox="0 0 24 24" aria-hidden="true"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></svg></div><p>Đồng hồ <b class="text-pink-300">chỉ bắt đầu chạy</b> khi bạn bấm nút Bắt đầu bên dưới.</p></div><div class="hero-feat"><div class="hero-feat-ic"><svg class="ic text-pink-300 text-xl" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg></div><p>Có thể <b class="text-pink-300">đánh dấu</b> câu chưa làm được để quay lại sau.</p></div><div class="hero-feat"><div class="hero-feat-ic"><svg class="ic text-pink-300 text-xl" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></div><p>Đáp án và lời giải chi tiết hiện sau khi bạn nộp bài.</p></div></div>
+
+                <button onclick="beginTest()" class="start-btn inline-flex items-center justify-center gap-3 text-lg sm:text-2xl">
+                    <svg class="ic text-2xl" viewBox="0 0 24 24" aria-hidden="true" style="fill:currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+                    <span>BẮT ĐẦU LÀM BÀI</span>
+                </button>
+            </div>
+
+            <div class="relative z-10 mt-10 flex items-center justify-center gap-1.5 text-slate-400 text-xs sm:text-sm">
+                <svg class="ic text-pink-300" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M14.83 14.83a4 4 0 1 1 0-5.66"/></svg>
+                <strong class="font-display text-pink-300 tracking-wide">ManhDucPham</strong>
+            </div>
+        </div>
+    </div>
+
+    
+    <header class="sticky top-0 z-40 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- App Brand Logo -->
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-indigo-700 via-indigo-500 to-pink-500 flex items-center justify-center shadow-lg shadow-indigo-900/50 ring-1 ring-pink-300/40">
+                    <svg class="ic text-lg text-white" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                </div>
+                <div>
+                    <div class="flex items-center space-x-2">
+                        <span class="font-display font-extrabold text-base sm:text-xl tracking-tight bg-gradient-to-r from-pink-300 via-indigo-200 to-pink-400 bg-clip-text text-transparent">
+                            Ngữ văn ĐGNL - Đề số 3
+                        </span>
+                        <span class="px-2 py-0.5 text-[10px] sm:text-xs font-semibold bg-pink-500/15 text-pink-300 rounded-full border border-pink-400/30">Ôn Tập</span>
+                    </div>
+                    <p class="text-[11px] text-slate-400 font-medium hidden sm:block">Phòng luyện Ngữ văn ĐGNL (50 câu)</p>
+                </div>
+            </div>
+
+            <!-- Header Action Controls -->
+            <div class="flex items-center space-x-3">
+                <!-- Nhạc tập trung -->
+                <div id="musicWrap" class="relative">
+                    <button id="musicBtn" onclick="toggleMusicPanel()" title="Nhạc Sóng Não" class="music-btn px-3 py-2 bg-slate-800/90 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-semibold rounded-xl border border-pink-400/30 transition duration-200 flex items-center space-x-2">
+                        <svg class="ic text-pink-300" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                        <span class="eq text-pink-300"><i></i><i></i><i></i></span>
+                        <span class="hidden md:inline">Nhạc Sóng Não</span>
+                    </button>
+                    <div id="musicPanel" class="hidden absolute right-0 top-full mt-3 w-72 glass-card rounded-2xl p-4 space-y-3 z-50 shadow-2xl">
+                        <div class="flex items-center justify-between">
+                            <div class="font-display font-bold text-slate-100 text-sm">Nhạc Sóng Não</div>
+                            <span id="musicStatus" class="text-[11px] font-semibold text-pink-300">Đang tắt</span>
+                        </div>
+                        <button onclick="toggleMusic()" class="w-full py-2.5 bg-gradient-to-r from-pink-500 to-indigo-600 hover:from-pink-400 hover:to-indigo-500 text-white text-xs font-bold rounded-xl shadow-lg shadow-indigo-900/40 ring-1 ring-pink-300/30 transition">
+                            <span id="musicToggleLabel">Bật nhạc</span>
+                        </button>
+                        <div>
+                            <div class="text-[11px] text-slate-400 mb-1.5">Nhịp sóng não (binaural)</div>
+                            <div class="grid grid-cols-3 gap-1.5">
+                                <button id="mode-alpha" onclick="setMusicMode('alpha')" class="mode-btn">Alpha<br><span>10 Hz</span></button>
+                                <button id="mode-beta" onclick="setMusicMode('beta')" class="mode-btn">Beta<br><span>18 Hz</span></button>
+                                <button id="mode-gamma" onclick="setMusicMode('gamma')" class="mode-btn">Gamma<br><span>40 Hz</span></button>
+                            </div>
+                            <div id="modeDesc" class="text-[11px] text-pink-300/90 mt-1.5">Tỉnh táo, tập trung giải bài</div>
+                        </div>
+                        <div>
+                            <div class="text-[11px] text-slate-400 mb-1">Âm lượng</div>
+                            <input type="range" min="0" max="100" value="70" oninput="setMusicVolume(this.value)" class="w-full accent-pink-500">
+                        </div>
+                        <p class="text-[10.5px] leading-relaxed text-slate-400">Âm thanh được tạo trực tiếp trên trình duyệt. Nên đeo tai nghe stereo để nghe được nhịp binaural và giữ âm lượng nhỏ. Hiệu quả của binaural còn tùy người, nhưng nhạc nền êm giúp nhiều bạn dễ tập trung hơn.</p>
+                    </div>
+                </div>
+
+                <!-- Exam Timer Display -->
+                <div id="examTimerBox" class="flex items-center space-x-2 bg-slate-800/90 px-3 py-1.5 rounded-xl border border-indigo-500/30 text-indigo-300 font-mono text-xs sm:text-sm font-bold active-timer">
+                    <svg class="ic text-indigo-400" viewBox="0 0 24 24" aria-hidden="true"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></svg>
+                    <span id="timerDisplay">25:00</span>
+                </div>
+
+                <!-- Submit Exam Button -->
+                <button id="submitExamBtn" onclick="submitExam()" class="px-4 py-2 bg-gradient-to-r from-pink-500 to-indigo-600 hover:from-pink-400 hover:to-indigo-500 text-white text-xs sm:text-sm font-bold rounded-xl shadow-lg shadow-indigo-900/40 ring-1 ring-pink-300/30 transition duration-200 flex items-center space-x-2">
+                    <svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                    <span>NỘP BÀI</span>
+                </button>
+
+                <!-- Sau khi nộp: thay đồng hồ + nút nộp bài bằng nút xem kết quả -->
+                <button id="viewResultBtn" onclick="openResultModal()" class="hidden px-4 py-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs sm:text-sm font-bold rounded-xl shadow-lg shadow-emerald-900/40 ring-1 ring-emerald-300/30 transition duration-200 flex items-center space-x-2">
+                    <svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-1.21 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98 1.21 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                    <span>Điểm: <span id="headerScore">0</span>/<span id="headerTotal">50</span> · Xem kết quả</span>
+                </button>
+
+                <button id="restartBtn" onclick="restartTest()" class="hidden px-3 py-2 bg-slate-800 hover:bg-slate-700 text-slate-100 text-xs sm:text-sm font-bold rounded-xl border border-pink-400/40 transition duration-200 flex items-center space-x-2">
+                    <svg class="ic text-pink-300 " viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>
+                    <span class="hidden sm:inline">Làm lại</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+        <!-- Left Sidebar (Matrix & Filters) -->
+        <aside class="lg:col-span-4 space-y-6">
+            
+            <!-- Thẻ trích dẫn -->
+        <div id="quoteCard" class="quote-card">
+            <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+            <div class="quote-label">Gửi người đang ôn thi</div>
+            <p id="quoteText" class="quote-text"></p>
+            <div class="quote-foot">
+                <span class="quote-line" aria-hidden="true"></span>
+                <span id="quoteAuthor" class="quote-author"></span>
+                <button type="button" onclick="nextQuote()" class="quote-next" title="Xem câu khác" aria-label="Xem câu khác">
+                    <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Question Matrix Container -->
+            <div class="glass-card p-5 rounded-2xl space-y-4">
+                <div class="flex items-center justify-between">
+                    <h2 class="text-xs font-bold text-slate-300 uppercase tracking-wider flex items-center space-x-2">
+                        <svg class="ic text-indigo-400" viewBox="0 0 24 24" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+                        <span>Ma Trận Câu Hỏi</span>
+                    </h2>
+                    <span id="progressText" class="text-xs font-bold px-2.5 py-1 bg-indigo-500/10 text-indigo-400 rounded-lg border border-indigo-500/20">
+                        0 / 50 Đã làm
+                    </span>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="w-full bg-slate-800 rounded-full h-2 overflow-hidden">
+                    <div id="progressBar" class="bg-gradient-to-r from-indigo-500 to-purple-500 h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+                </div>
+
+                <!-- Matrix Button Grid -->
+                <div id="questionMatrix" class="grid grid-cols-5 sm:grid-cols-6 gap-2 max-h-[260px] overflow-y-auto pr-1">
+                    <!-- Matrix buttons populated dynamically -->
+                </div>
+
+                <!-- Flag summary -->
+                <div id="flagRow" class="flex items-center justify-between gap-2 rounded-xl px-3 py-2 bg-pink-500/10 border border-pink-400/25">
+                    <div class="flex items-center space-x-2 text-xs text-pink-300 font-semibold">
+                        <svg class="ic text-pink-400" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg>
+                        <span>Chưa làm được: <strong id="flagCount" class="text-slate-100">0</strong> câu</span>
+                    </div>
+                    <button id="flagJumpBtn" onclick="jumpToNextFlag()" class="text-[11px] font-bold px-2.5 py-1 rounded-lg bg-pink-500/20 text-pink-300 hover:bg-pink-500/30 transition">Tới câu kế tiếp</button>
+                </div>
+
+                <!-- Legend Indicator -->
+                <div class="pt-3 border-t border-slate-800 flex flex-wrap gap-x-4 gap-y-2 text-[11px] text-slate-400">
+                    <div class="flex items-center space-x-1.5">
+                        <span class="w-3 h-3 rounded-md bg-slate-800 border border-slate-700"></span>
+                        <span>Chưa làm</span>
+                    </div>
+                    <div id="legendFlag" class="flex items-center space-x-1.5">
+                        <span class="w-3 h-3 rounded-md bg-pink-500/30 border border-pink-400"></span>
+                        <span>Đánh dấu</span>
+                    </div>
+                    <div id="legendSelected" class="flex items-center space-x-1.5">
+                        <span class="w-3 h-3 rounded-md bg-indigo-600"></span>
+                        <span>Đã làm</span>
+                    </div>
+                    <div id="legendCorrect" class="hidden flex items-center space-x-1.5">
+                        <span class="w-3 h-3 rounded-md bg-emerald-600"></span>
+                        <span>Đúng</span>
+                    </div>
+                    <div id="legendIncorrect" class="hidden flex items-center space-x-1.5">
+                        <span class="w-3 h-3 rounded-md bg-rose-600"></span>
+                        <span>Sai</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Right Main Panel (Question Cards List) -->
+        <section class="lg:col-span-8 space-y-6">
+            <div class="hero-banner rounded-3xl p-6 sm:p-8 shadow-2xl">
+                <div class="relative z-10 space-y-4">
+                    <div class="inline-flex items-center space-x-2 text-[11px] font-semibold tracking-[0.18em] uppercase text-pink-300">
+                        <svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg><span>Phòng luyện Ngữ văn</span>
+                    </div>
+                    <h1 class="font-display text-2xl sm:text-3xl font-extrabold text-white leading-tight">
+                        Ngữ văn <span class="text-pink-300">ĐGNL</span>
+                    </h1>
+                    <div class="flex flex-wrap gap-2 text-[11px] sm:text-xs text-slate-100">
+                        <span class="hero-chip px-3 py-1.5 rounded-full"><svg class="ic mr-1.5 text-pink-300" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg><span id="heroCount">50 câu</span></span>
+                        <span class="hero-chip px-3 py-1.5 rounded-full"><svg class="ic mr-1.5 text-pink-300" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg>60 phút</span>
+                        <span class="hero-chip px-3 py-1.5 rounded-full"><svg class="ic mr-1.5 text-pink-300" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg>Đánh dấu câu làm sau</span>
+                        <span class="hero-chip px-3 py-1.5 rounded-full"><svg class="ic mr-1.5 text-pink-300" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>Lời giải từng bước</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center justify-between px-1 text-xs text-slate-400">
+                <span>Tổng cộng <strong id="visibleCount" class="text-indigo-400">0</strong> câu hỏi</span>
+                <button onclick="scrollToTop()" class="hover:text-slate-200 transition flex items-center space-x-1">
+                    <svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg>
+                    <span>Lên đầu trang</span>
+                </button>
+            </div>
+
+            <!-- Dynamic Question Cards Stream -->
+            <div id="questionsContainer" class="space-y-6">
+                <!-- Dynamically populated question cards -->
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-pink-500/15 mt-6 py-5 text-center text-[11px] text-slate-400">
+        <span class="font-display text-pink-300">Ngữ văn ĐGNL - Đề số 3</span> · Phòng luyện Ngữ văn ĐGNL
+    
+        <div class="mt-3 flex items-center justify-center gap-1.5 text-slate-300 text-xs">
+            <svg class="ic text-pink-300" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M14.83 14.83a4 4 0 1 1 0-5.66"/></svg>
+            <strong class="font-display text-pink-300 tracking-wide">ManhDucPham</strong>
+        </div>
+    </footer>
+
+    <div id="resultModal" class="fixed inset-0 z-50 flex opacity-0 pointer-events-none transition-all duration-300">
+        <div class="result-scale transform scale-95 transition-all duration-300">
+            <div class="result-land">
+                <div class="result-left">
+                    <div class="result-head text-center">
+                        <div class="head-ic inline-flex items-center justify-center rounded-2xl bg-gradient-to-tr from-indigo-700 to-purple-600 shadow-lg shadow-indigo-900/50 ring-1 ring-pink-300/40">
+                            <svg class="ic text-2xl text-amber-300" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-1.21 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98 1.21 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                        </div>
+                        <h2 class="font-black text-slate-100">KẾT QUẢ BÀI THI</h2>
+                        <p class="text-xs text-slate-400">Ngữ văn ĐGNL - Đề số 3</p>
+                    </div>
+                    <div class="score-card">
+                    <div class="score-eyebrow"><span></span><em>Tổng điểm &middot; Ngữ văn HSA</em><span></span></div>
+                    <div class="score-ring">
+                        <svg viewBox="0 0 160 160" aria-hidden="true">
+                            <defs><linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d9962f"/><stop offset="1" stop-color="#a8321f"/></linearGradient></defs>
+                            <circle class="ring-track" cx="80" cy="80" r="68"/>
+                            <circle id="ringFill" class="ring-fill" cx="80" cy="80" r="68" transform="rotate(-90 80 80)" stroke-dasharray="427.26" stroke-dashoffset="427.26"/>
+                        </svg>
+                        <div class="ring-center">
+                            <div class="ring-line"><span id="finalScore" class="ring-num">0</span><span class="ring-den">/<span id="scoreTotal">50</span></span></div>
+                        </div>
+                    </div>
+                    <div class="amap">
+                        <div class="amap-title"><span></span><em>Kết quả từng câu</em><span></span></div>
+                        <div id="answerMap" class="amap-grid"></div>
+                        <div class="amap-legend"><i class="ok"></i>Đúng<i class="bad"></i>Sai<i class="skip"></i>Chưa làm</div>
+                    </div>
+                    
+                </div>
+                </div>
+                <div class="result-right">
+                    <div class="rtabs">
+                        <button type="button" id="tabBtnOverview" class="on" onclick="switchResultTab('overview')">Tổng quan</button>
+                        <button type="button" id="tabBtnWeak" onclick="switchResultTab('weak')">Phân tích điểm yếu</button>
+                    </div>
+                    <div id="tabOverview" class="rtab">
+                    <div id="sectionBars" class="sec-bars"></div>
+                    <div class="grid grid-cols-3 gap-3">
+                <div class="bg-slate-900/60 p-3 rounded-xl border border-emerald-500/20 text-center">
+                    <div class="text-[11px] text-slate-400">Câu Đúng</div>
+                    <div id="modalCorrect" class="text-lg font-bold text-emerald-400 mt-0.5">0</div>
+                </div>
+                <div class="bg-slate-900/60 p-3 rounded-xl border border-rose-500/20 text-center">
+                    <div class="text-[11px] text-slate-400">Câu Sai</div>
+                    <div id="modalIncorrect" class="text-lg font-bold text-rose-400 mt-0.5">0</div>
+                </div>
+                <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700/50 text-center">
+                    <div class="text-[11px] text-slate-400">Chưa Làm</div>
+                    <div id="modalSkipped" class="text-lg font-bold text-slate-400 mt-0.5">0</div>
+                </div>
+            </div>
+                    <div class="flex items-center justify-between text-xs text-slate-400 bg-slate-900/40 px-4 py-2.5 rounded-xl border border-slate-800">
+                <span><svg class="ic text-indigo-400 mr-1.5" viewBox="0 0 24 24" aria-hidden="true"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></svg>Thời gian hoàn thành:</span>
+                <span id="timeSpentText" class="font-bold text-slate-200">--:--</span>
+            </div>
+                    </div>
+                    <div id="tabWeak" class="rtab" hidden><div id="weakBox" class="weak-box"></div></div>
+                    <div class="result-actions grid grid-cols-2 gap-3">
+                <button onclick="closeResultModal()" class="w-full py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold rounded-xl border border-slate-700 transition">
+                    <svg class="ic mr-1.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg> Xem Lời Giải
+                </button>
+                <button onclick="restartTest()" class="w-full py-3 bg-gradient-to-r from-pink-500 to-indigo-600 hover:from-pink-400 hover:to-indigo-500 text-white text-xs font-bold rounded-xl shadow-lg shadow-indigo-900/40 ring-1 ring-pink-300/30 transition">
+                    <svg class="ic mr-1.5 " viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg> Làm Lại
+                </button>
+            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+        <div class="glass-card max-w-sm w-full rounded-2xl p-6 text-center space-y-4 border border-slate-700 shadow-2xl">
+            <div class="w-12 h-12 bg-indigo-500/10 text-indigo-400 rounded-full flex items-center justify-center mx-auto">
+                <svg class="ic text-xl" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+            </div>
+            <h3 id="confirmTitle" class="text-lg font-bold text-slate-100">Xác nhận</h3>
+            <p id="confirmDesc" class="text-xs text-slate-300 leading-relaxed">Bạn có chắc chắn muốn làm điều này?</p>
+            <div class="grid grid-cols-2 gap-3 pt-2">
+                <button id="confirmCancelBtn" class="py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold rounded-xl border border-slate-700">Hủy bỏ</button>
+                <button id="confirmOkBtn" class="py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold rounded-xl shadow-md">Đồng ý</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Master Question Dataset (Options[0] is original correct answer)
+        const RAW_QUESTION_BANK = [
+  {
+    "id": 1,
+    "question": "Phương thức biểu đạt chính của đoạn trích trên là gì?",
+    "options": [
+      "Tự sự",
+      "Miêu tả",
+      "Biểu cảm",
+      "Thuyết minh"
+    ],
+    "answer": 0,
+    "explanation": "Đoạn trích kể lại một sự việc (cảnh cho chữ và lời khuyên của Huấn Cao) nên phương thức chính là **tự sự**.",
+    "passage": "<p>Một người tù cổ đeo gông, chân vướng xiềng, đang dậm tô nét chữ trên tấm lụa trắng tinh căng phẳng trên mảnh ván. Người tù viết xong một chữ, viên quản ngục lại vội khúm núm cất những đồng tiền kẽm đánh dấu ô chữ đặt trên phiến lụa óng. Và cái thầy thơ lại gầy gò, thì run run bưng chậu mực. Thay bút con, đề xong lạc khoản, ông Huấn Cao thở dài, buồn bã đỡ viên quan ngục đứng thẳng người dậy và đĩnh đạc bảo:</p><p>- Ở đây lẫn lộn. Ta khuyên thầy Quản nên thay chốn ở đi. Chỗ này không phải là nơi để treo một bức lụa trắng trẻo với những nét chữ vuông vắn tươi tắn nó nói lên những cái hoài bão tung hoành của một đời con người. Thoi mực, thầy mua ở đâu tốt và thơm quá. Thầy có thấy mùi thơm ở chậu mực bốc lên không?... Tôi bảo thực đấy: thầy Quản nên tìm về nhà quê mà ở đã, thầy hãy thoát khỏi cái nghề này đi đã, rồi hãy nghĩ đến chuyện chơi chữ. Ở đây, khó giữ thiên lương cho lành vững và rồi cũng đến nhem nhuốc mất cái đời lương thiện đi.</p><p class=\"pcite\">(Trích “<i>Chữ người tử tù</i>” – Nguyễn Tuân, SGK Ngữ văn, tập một lớp 11)</p>",
+    "group": 1,
+    "range": [
+      1,
+      5
+    ],
+    "skill": "PC"
+  },
+  {
+    "id": 2,
+    "question": "Nội dung chính của đoạn trích trên là gì?",
+    "options": [
+      "Lời khuyên của Huấn Cao đối với viên quản ngục",
+      "Sự đối lập giữa người cho chữ và người nhận chữ",
+      "Cảnh cho chữ - cảnh tượng xưa nay chưa từng có",
+      "Viên quản ngục cảm động nhận lời giáo huấn từ tử tù Huấn Cao"
+    ],
+    "answer": 2,
+    "explanation": "Đoạn trích tái hiện **cảnh cho chữ** trong ngục tối, một cảnh tượng “xưa nay chưa từng có”.",
+    "passage": "<p>Một người tù cổ đeo gông, chân vướng xiềng, đang dậm tô nét chữ trên tấm lụa trắng tinh căng phẳng trên mảnh ván. Người tù viết xong một chữ, viên quản ngục lại vội khúm núm cất những đồng tiền kẽm đánh dấu ô chữ đặt trên phiến lụa óng. Và cái thầy thơ lại gầy gò, thì run run bưng chậu mực. Thay bút con, đề xong lạc khoản, ông Huấn Cao thở dài, buồn bã đỡ viên quan ngục đứng thẳng người dậy và đĩnh đạc bảo:</p><p>- Ở đây lẫn lộn. Ta khuyên thầy Quản nên thay chốn ở đi. Chỗ này không phải là nơi để treo một bức lụa trắng trẻo với những nét chữ vuông vắn tươi tắn nó nói lên những cái hoài bão tung hoành của một đời con người. Thoi mực, thầy mua ở đâu tốt và thơm quá. Thầy có thấy mùi thơm ở chậu mực bốc lên không?... Tôi bảo thực đấy: thầy Quản nên tìm về nhà quê mà ở đã, thầy hãy thoát khỏi cái nghề này đi đã, rồi hãy nghĩ đến chuyện chơi chữ. Ở đây, khó giữ thiên lương cho lành vững và rồi cũng đến nhem nhuốc mất cái đời lương thiện đi.</p><p class=\"pcite\">(Trích “<i>Chữ người tử tù</i>” – Nguyễn Tuân, SGK Ngữ văn, tập một lớp 11)</p>",
+    "group": 1,
+    "range": [
+      1,
+      5
+    ],
+    "skill": "ND"
+  },
+  {
+    "id": 3,
+    "question": "Biện pháp nghệ thuật nổi bật nhất trong đoạn trích là biện pháp nào?",
+    "options": [
+      "Nghệ thuật tương phản đối lập",
+      "Tạo tình huống truyện độc đáo",
+      "Lựa chọn chi tiết tiêu biểu",
+      "Ngôn ngữ tài hoa, uyên bác"
+    ],
+    "answer": 0,
+    "explanation": "Nổi bật là **tương phản đối lập**: tử tù cổ đeo gông >< quản ngục khúm núm; cái đẹp (chữ) >< nơi tăm tối (ngục tù).",
+    "passage": "<p>Một người tù cổ đeo gông, chân vướng xiềng, đang dậm tô nét chữ trên tấm lụa trắng tinh căng phẳng trên mảnh ván. Người tù viết xong một chữ, viên quản ngục lại vội khúm núm cất những đồng tiền kẽm đánh dấu ô chữ đặt trên phiến lụa óng. Và cái thầy thơ lại gầy gò, thì run run bưng chậu mực. Thay bút con, đề xong lạc khoản, ông Huấn Cao thở dài, buồn bã đỡ viên quan ngục đứng thẳng người dậy và đĩnh đạc bảo:</p><p>- Ở đây lẫn lộn. Ta khuyên thầy Quản nên thay chốn ở đi. Chỗ này không phải là nơi để treo một bức lụa trắng trẻo với những nét chữ vuông vắn tươi tắn nó nói lên những cái hoài bão tung hoành của một đời con người. Thoi mực, thầy mua ở đâu tốt và thơm quá. Thầy có thấy mùi thơm ở chậu mực bốc lên không?... Tôi bảo thực đấy: thầy Quản nên tìm về nhà quê mà ở đã, thầy hãy thoát khỏi cái nghề này đi đã, rồi hãy nghĩ đến chuyện chơi chữ. Ở đây, khó giữ thiên lương cho lành vững và rồi cũng đến nhem nhuốc mất cái đời lương thiện đi.</p><p class=\"pcite\">(Trích “<i>Chữ người tử tù</i>” – Nguyễn Tuân, SGK Ngữ văn, tập một lớp 11)</p>",
+    "group": 1,
+    "range": [
+      1,
+      5
+    ],
+    "skill": "BP"
+  },
+  {
+    "id": 4,
+    "question": "Lời khuyên của viên quản ngục đối với Huấn Cao đã thể hiện quan niệm nghệ thuật gì?",
+    "options": [
+      "Cái đẹp luôn đi cùng với cái thiện",
+      "Cái đẹp luôn chiến thắng cái ác và cái xấu",
+      "Cái đẹp có thể ra đời từ một nơi tăm tối và có thể tồn tại chung với cái ác và cái xấu",
+      "Cái đẹp giúp con người gìn giữ thiên lương"
+    ],
+    "answer": 1,
+    "explanation": "Theo đáp án của đề, phương án đúng là B: cái đẹp luôn **chiến thắng cái ác và cái xấu**.",
+    "passage": "<p>Một người tù cổ đeo gông, chân vướng xiềng, đang dậm tô nét chữ trên tấm lụa trắng tinh căng phẳng trên mảnh ván. Người tù viết xong một chữ, viên quản ngục lại vội khúm núm cất những đồng tiền kẽm đánh dấu ô chữ đặt trên phiến lụa óng. Và cái thầy thơ lại gầy gò, thì run run bưng chậu mực. Thay bút con, đề xong lạc khoản, ông Huấn Cao thở dài, buồn bã đỡ viên quan ngục đứng thẳng người dậy và đĩnh đạc bảo:</p><p>- Ở đây lẫn lộn. Ta khuyên thầy Quản nên thay chốn ở đi. Chỗ này không phải là nơi để treo một bức lụa trắng trẻo với những nét chữ vuông vắn tươi tắn nó nói lên những cái hoài bão tung hoành của một đời con người. Thoi mực, thầy mua ở đâu tốt và thơm quá. Thầy có thấy mùi thơm ở chậu mực bốc lên không?... Tôi bảo thực đấy: thầy Quản nên tìm về nhà quê mà ở đã, thầy hãy thoát khỏi cái nghề này đi đã, rồi hãy nghĩ đến chuyện chơi chữ. Ở đây, khó giữ thiên lương cho lành vững và rồi cũng đến nhem nhuốc mất cái đời lương thiện đi.</p><p class=\"pcite\">(Trích “<i>Chữ người tử tù</i>” – Nguyễn Tuân, SGK Ngữ văn, tập một lớp 11)</p>",
+    "group": 1,
+    "range": [
+      1,
+      5
+    ],
+    "skill": "ND"
+  },
+  {
+    "id": 5,
+    "question": "Câu sau thuộc kiểu câu gì: “thầy Quản nên tìm về nhà quê mà ở đã, thầy hãy thoát khỏi cái nghề này đi đã, rồi hãy nghĩ đến chuyện chơi chữ.”?",
+    "options": [
+      "Câu trần thuật",
+      "Câu nghi vấn",
+      "Câu cảm thán",
+      "Câu cầu khiến"
+    ],
+    "answer": 3,
+    "explanation": "Câu có từ “hãy”, “nên”, nhằm khuyên bảo, yêu cầu người nghe làm việc gì: **câu cầu khiến**.",
+    "passage": "<p>Một người tù cổ đeo gông, chân vướng xiềng, đang dậm tô nét chữ trên tấm lụa trắng tinh căng phẳng trên mảnh ván. Người tù viết xong một chữ, viên quản ngục lại vội khúm núm cất những đồng tiền kẽm đánh dấu ô chữ đặt trên phiến lụa óng. Và cái thầy thơ lại gầy gò, thì run run bưng chậu mực. Thay bút con, đề xong lạc khoản, ông Huấn Cao thở dài, buồn bã đỡ viên quan ngục đứng thẳng người dậy và đĩnh đạc bảo:</p><p>- Ở đây lẫn lộn. Ta khuyên thầy Quản nên thay chốn ở đi. Chỗ này không phải là nơi để treo một bức lụa trắng trẻo với những nét chữ vuông vắn tươi tắn nó nói lên những cái hoài bão tung hoành của một đời con người. Thoi mực, thầy mua ở đâu tốt và thơm quá. Thầy có thấy mùi thơm ở chậu mực bốc lên không?... Tôi bảo thực đấy: thầy Quản nên tìm về nhà quê mà ở đã, thầy hãy thoát khỏi cái nghề này đi đã, rồi hãy nghĩ đến chuyện chơi chữ. Ở đây, khó giữ thiên lương cho lành vững và rồi cũng đến nhem nhuốc mất cái đời lương thiện đi.</p><p class=\"pcite\">(Trích “<i>Chữ người tử tù</i>” – Nguyễn Tuân, SGK Ngữ văn, tập một lớp 11)</p>",
+    "group": 1,
+    "range": [
+      1,
+      5
+    ],
+    "skill": "TN"
+  },
+  {
+    "id": 6,
+    "question": "Xác định phong cách ngôn ngữ được sử dụng trong đoạn trích trên?",
+    "options": [
+      "Chính luận",
+      "Khoa học",
+      "Nghệ thuật",
+      "Báo chí"
+    ],
+    "answer": 0,
+    "explanation": "Văn bản bàn về vấn đề xã hội – chính trị, lập luận sắc bén: phong cách ngôn ngữ **chính luận**.",
+    "passage": "<p>“Dẫu trôi nổi, dẫu cực khổ thế nào mặc lòng, miễn là có kẻ mang đai đội mũ ngất ngưởng ngồi trên, có kẻ áo rộng khăn đen lúc nhúc lạy dưới, trăm nghìn năm như thế cũng xong! Dân khôn mà chi! Dân ngu mà chi! Dân lợi mà chi! Dân hại mà chi! Dân càng nô lệ, ngôi vua càng lâu dài, bọn quan lại càng phú quý! Chẳng những thế mà thôi, “một người làm quan một nhà có phước”, dầu tham, dầu nhũng, dầu vơ vét, dầu rút tỉa của dân thế nào cũng không ai phẩm bình; dầu lấy của dân mua vườn sắm ruộng, xây nhà làm cửa cũng không ai chê bai. Người ngoài thì khen đắc thời, người nhà thì dựa hơi quan, khiến những kẻ ham mồi phú quý không đua chen vào đám quan trường sao được!”</p><p class=\"pcite\">(Phan Châu Trinh, <i>Về luân lí xã hội ở nước ta</i>, Ngữ văn 11, tập hai)</p>",
+    "group": 6,
+    "range": [
+      6,
+      10
+    ],
+    "skill": "PC"
+  },
+  {
+    "id": 7,
+    "question": "Nội dung chính của đoạn trích trên là gì?",
+    "options": [
+      "Những hành động vơ vét của quan lại.",
+      "Sự bất bình về tình trạng vô cảm của số đông trước những đau khổ của người dân, trước sự nhũng lạm của bọn quan lại.",
+      "Sự đua chen của những kẻ ham mồi phú quý.",
+      "Phê phán hành động tham nhũng của quan lại."
+    ],
+    "answer": 1,
+    "explanation": "Tác giả bày tỏ **sự bất bình** trước sự vô cảm của số đông và sự nhũng lạm của quan lại đối với nỗi khổ của dân.",
+    "passage": "<p>“Dẫu trôi nổi, dẫu cực khổ thế nào mặc lòng, miễn là có kẻ mang đai đội mũ ngất ngưởng ngồi trên, có kẻ áo rộng khăn đen lúc nhúc lạy dưới, trăm nghìn năm như thế cũng xong! Dân khôn mà chi! Dân ngu mà chi! Dân lợi mà chi! Dân hại mà chi! Dân càng nô lệ, ngôi vua càng lâu dài, bọn quan lại càng phú quý! Chẳng những thế mà thôi, “một người làm quan một nhà có phước”, dầu tham, dầu nhũng, dầu vơ vét, dầu rút tỉa của dân thế nào cũng không ai phẩm bình; dầu lấy của dân mua vườn sắm ruộng, xây nhà làm cửa cũng không ai chê bai. Người ngoài thì khen đắc thời, người nhà thì dựa hơi quan, khiến những kẻ ham mồi phú quý không đua chen vào đám quan trường sao được!”</p><p class=\"pcite\">(Phan Châu Trinh, <i>Về luân lí xã hội ở nước ta</i>, Ngữ văn 11, tập hai)</p>",
+    "group": 6,
+    "range": [
+      6,
+      10
+    ],
+    "skill": "ND"
+  },
+  {
+    "id": 8,
+    "question": "Câu “Dân khôn mà chi! Dân ngu mà chi! Dân lợi mà chi! Dân hại mà chi!” sử dụng biện pháp tu từ nào?",
+    "options": [
+      "Điệp cấu trúc, liệt kê",
+      "Liệt kê, ẩn dụ",
+      "So sánh, ẩn dụ",
+      "Đảo ngữ, điệp cấu trúc"
+    ],
+    "answer": 0,
+    "explanation": "Cấu trúc “Dân … mà chi!” lặp lại nhiều lần (**điệp cấu trúc**), đồng thời kể ra hàng loạt trường hợp (**liệt kê**).",
+    "passage": "<p>“Dẫu trôi nổi, dẫu cực khổ thế nào mặc lòng, miễn là có kẻ mang đai đội mũ ngất ngưởng ngồi trên, có kẻ áo rộng khăn đen lúc nhúc lạy dưới, trăm nghìn năm như thế cũng xong! Dân khôn mà chi! Dân ngu mà chi! Dân lợi mà chi! Dân hại mà chi! Dân càng nô lệ, ngôi vua càng lâu dài, bọn quan lại càng phú quý! Chẳng những thế mà thôi, “một người làm quan một nhà có phước”, dầu tham, dầu nhũng, dầu vơ vét, dầu rút tỉa của dân thế nào cũng không ai phẩm bình; dầu lấy của dân mua vườn sắm ruộng, xây nhà làm cửa cũng không ai chê bai. Người ngoài thì khen đắc thời, người nhà thì dựa hơi quan, khiến những kẻ ham mồi phú quý không đua chen vào đám quan trường sao được!”</p><p class=\"pcite\">(Phan Châu Trinh, <i>Về luân lí xã hội ở nước ta</i>, Ngữ văn 11, tập hai)</p>",
+    "group": 6,
+    "range": [
+      6,
+      10
+    ],
+    "skill": "BP"
+  },
+  {
+    "id": 9,
+    "question": "Đoạn trích trên sử dụng những phương thức biểu đạt nào?",
+    "options": [
+      "Miêu tả, biểu cảm",
+      "Nghị luận, biểu cảm",
+      "Thuyết minh, miêu tả",
+      "Tự sự, biểu cảm"
+    ],
+    "answer": 1,
+    "explanation": "Đoạn trích nêu quan điểm, lập luận (**nghị luận**) và bộc lộ thái độ bất bình, mỉa mai (**biểu cảm**).",
+    "passage": "<p>“Dẫu trôi nổi, dẫu cực khổ thế nào mặc lòng, miễn là có kẻ mang đai đội mũ ngất ngưởng ngồi trên, có kẻ áo rộng khăn đen lúc nhúc lạy dưới, trăm nghìn năm như thế cũng xong! Dân khôn mà chi! Dân ngu mà chi! Dân lợi mà chi! Dân hại mà chi! Dân càng nô lệ, ngôi vua càng lâu dài, bọn quan lại càng phú quý! Chẳng những thế mà thôi, “một người làm quan một nhà có phước”, dầu tham, dầu nhũng, dầu vơ vét, dầu rút tỉa của dân thế nào cũng không ai phẩm bình; dầu lấy của dân mua vườn sắm ruộng, xây nhà làm cửa cũng không ai chê bai. Người ngoài thì khen đắc thời, người nhà thì dựa hơi quan, khiến những kẻ ham mồi phú quý không đua chen vào đám quan trường sao được!”</p><p class=\"pcite\">(Phan Châu Trinh, <i>Về luân lí xã hội ở nước ta</i>, Ngữ văn 11, tập hai)</p>",
+    "group": 6,
+    "range": [
+      6,
+      10
+    ],
+    "skill": "PC"
+  },
+  {
+    "id": 10,
+    "question": "Đoạn trích trên sử dụng mấy từ láy?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": 1,
+    "explanation": "Hai từ láy trong đoạn trích: **ngất ngưởng**, **lúc nhúc**.",
+    "passage": "<p>“Dẫu trôi nổi, dẫu cực khổ thế nào mặc lòng, miễn là có kẻ mang đai đội mũ ngất ngưởng ngồi trên, có kẻ áo rộng khăn đen lúc nhúc lạy dưới, trăm nghìn năm như thế cũng xong! Dân khôn mà chi! Dân ngu mà chi! Dân lợi mà chi! Dân hại mà chi! Dân càng nô lệ, ngôi vua càng lâu dài, bọn quan lại càng phú quý! Chẳng những thế mà thôi, “một người làm quan một nhà có phước”, dầu tham, dầu nhũng, dầu vơ vét, dầu rút tỉa của dân thế nào cũng không ai phẩm bình; dầu lấy của dân mua vườn sắm ruộng, xây nhà làm cửa cũng không ai chê bai. Người ngoài thì khen đắc thời, người nhà thì dựa hơi quan, khiến những kẻ ham mồi phú quý không đua chen vào đám quan trường sao được!”</p><p class=\"pcite\">(Phan Châu Trinh, <i>Về luân lí xã hội ở nước ta</i>, Ngữ văn 11, tập hai)</p>",
+    "group": 6,
+    "range": [
+      6,
+      10
+    ],
+    "skill": "TN"
+  },
+  {
+    "id": 11,
+    "question": "Phương thức biểu đạt chính sử dụng trong đoạn trích trên là gì?",
+    "options": [
+      "Nghị luận",
+      "Biểu cảm",
+      "Thuyết minh",
+      "Tự sự"
+    ],
+    "answer": 0,
+    "explanation": "Đoạn trích nêu vấn đề, đặt câu hỏi, lập luận để thuyết phục: phương thức chính là **nghị luận**.",
+    "passage": "<p>(1) Dường như mọi hình thức sống trên hành tinh này đều nỗ lực phát huy tối đa tiềm năng của mình, ngoại trừ loài người.</p><p>(2) Một cái cây không bao giờ mọc tới nửa kích thước tiềm năng của nó rồi nói: “Chắc tôi chỉ làm được đến vậy”. Một cái cây sẽ vươn bộ rễ của mình cắm càng sâu vào lòng đất càng tốt, tới kịch điểm sự cho phép của tự nhiên. Và rồi nó sẽ nhìn xuống chúng ta như thể nhắc nhở chúng ta rằng mỗi người đều có thể trở thành người như thế nào nếu chịu thực hiện tất cả những gì mình có thể.</p><p>(3) Tại sao loài người, hình thức sống thông minh nhất trên trái đất, lại không nỗ lực phát huy tối đa tiềm năng của bản thân? Tại sao chúng ta lại cho phép mình dừng lại ở giữa cuộc hành trình? Tại sao chúng ta lại không tiếp tục cố gắng trở thành tất cả những gì mà chúng ta có thể là? Lý do ở đây rất đơn giản: chúng ta được trao cho sự tự do trong lựa chọn.</p><p>(4) Trong hầu hết các trường hợp, quyền lựa chọn là món quà. Nhưng xét từ góc độ thực hiện tất cả những gì chúng ta có thể với những khả năng và cơ hội trước mắt, lựa chọn đôi khi lại là một lời nguyền tai hại chứ không phải là một phép màu ban tặng. Thường thì chúng ta sẽ lựa chọn cách làm việc ít hơn khả năng thực tế. Chúng ta muốn nằm dài nghỉ ngơi dưới bóng râm mát của một cái cây hơn là bắt chước quá trình vật lộn để vươn cao của nó...</p><p class=\"pcite\">(Trích <i>Những mảnh ghép cuộc đời</i>, Jim Rohn, NXB Lao Động, 2022, tr.163-165)</p>",
+    "group": 11,
+    "range": [
+      11,
+      15
+    ],
+    "skill": "PC"
+  },
+  {
+    "id": 12,
+    "question": "Hành trình sinh trưởng của cái cây trong tự nhiên được miêu tả ở đoạn (2) nhắc nhở con người điều gì?",
+    "options": [
+      "Mỗi người đều phải cố gắng hết mình",
+      "Mỗi người đều phải kiên trì vượt qua khó khăn",
+      "Mỗi người đều phải có mục tiêu để cố gắng",
+      "Mỗi người sẽ thành công nếu thực hiện tất cả những gì mình có thể"
+    ],
+    "answer": 3,
+    "explanation": "Câu cuối đoạn (2): mỗi người có thể trở thành người như thế nào **nếu chịu thực hiện tất cả những gì mình có thể**.",
+    "passage": "<p>(1) Dường như mọi hình thức sống trên hành tinh này đều nỗ lực phát huy tối đa tiềm năng của mình, ngoại trừ loài người.</p><p>(2) Một cái cây không bao giờ mọc tới nửa kích thước tiềm năng của nó rồi nói: “Chắc tôi chỉ làm được đến vậy”. Một cái cây sẽ vươn bộ rễ của mình cắm càng sâu vào lòng đất càng tốt, tới kịch điểm sự cho phép của tự nhiên. Và rồi nó sẽ nhìn xuống chúng ta như thể nhắc nhở chúng ta rằng mỗi người đều có thể trở thành người như thế nào nếu chịu thực hiện tất cả những gì mình có thể.</p><p>(3) Tại sao loài người, hình thức sống thông minh nhất trên trái đất, lại không nỗ lực phát huy tối đa tiềm năng của bản thân? Tại sao chúng ta lại cho phép mình dừng lại ở giữa cuộc hành trình? Tại sao chúng ta lại không tiếp tục cố gắng trở thành tất cả những gì mà chúng ta có thể là? Lý do ở đây rất đơn giản: chúng ta được trao cho sự tự do trong lựa chọn.</p><p>(4) Trong hầu hết các trường hợp, quyền lựa chọn là món quà. Nhưng xét từ góc độ thực hiện tất cả những gì chúng ta có thể với những khả năng và cơ hội trước mắt, lựa chọn đôi khi lại là một lời nguyền tai hại chứ không phải là một phép màu ban tặng. Thường thì chúng ta sẽ lựa chọn cách làm việc ít hơn khả năng thực tế. Chúng ta muốn nằm dài nghỉ ngơi dưới bóng râm mát của một cái cây hơn là bắt chước quá trình vật lộn để vươn cao của nó...</p><p class=\"pcite\">(Trích <i>Những mảnh ghép cuộc đời</i>, Jim Rohn, NXB Lao Động, 2022, tr.163-165)</p>",
+    "group": 11,
+    "range": [
+      11,
+      15
+    ],
+    "skill": "ND"
+  },
+  {
+    "id": 13,
+    "question": "Theo tác giả, vì sao loài người lại không nỗ lực phát huy tối đa tiềm năng của bản thân?",
+    "options": [
+      "Vì con người được trao cho sự tự do trong lựa chọn",
+      "Vì con người là hình thức sống thông minh nhất trên trái đất",
+      "Vì con người cho phép mình dừng lại ở giữa cuộc hành trình.",
+      "Vì con người có nhiều cơ hội để phát triển."
+    ],
+    "answer": 0,
+    "explanation": "Đoạn (3): “Lý do ở đây rất đơn giản: chúng ta được trao cho **sự tự do trong lựa chọn**.”",
+    "passage": "<p>(1) Dường như mọi hình thức sống trên hành tinh này đều nỗ lực phát huy tối đa tiềm năng của mình, ngoại trừ loài người.</p><p>(2) Một cái cây không bao giờ mọc tới nửa kích thước tiềm năng của nó rồi nói: “Chắc tôi chỉ làm được đến vậy”. Một cái cây sẽ vươn bộ rễ của mình cắm càng sâu vào lòng đất càng tốt, tới kịch điểm sự cho phép của tự nhiên. Và rồi nó sẽ nhìn xuống chúng ta như thể nhắc nhở chúng ta rằng mỗi người đều có thể trở thành người như thế nào nếu chịu thực hiện tất cả những gì mình có thể.</p><p>(3) Tại sao loài người, hình thức sống thông minh nhất trên trái đất, lại không nỗ lực phát huy tối đa tiềm năng của bản thân? Tại sao chúng ta lại cho phép mình dừng lại ở giữa cuộc hành trình? Tại sao chúng ta lại không tiếp tục cố gắng trở thành tất cả những gì mà chúng ta có thể là? Lý do ở đây rất đơn giản: chúng ta được trao cho sự tự do trong lựa chọn.</p><p>(4) Trong hầu hết các trường hợp, quyền lựa chọn là món quà. Nhưng xét từ góc độ thực hiện tất cả những gì chúng ta có thể với những khả năng và cơ hội trước mắt, lựa chọn đôi khi lại là một lời nguyền tai hại chứ không phải là một phép màu ban tặng. Thường thì chúng ta sẽ lựa chọn cách làm việc ít hơn khả năng thực tế. Chúng ta muốn nằm dài nghỉ ngơi dưới bóng râm mát của một cái cây hơn là bắt chước quá trình vật lộn để vươn cao của nó...</p><p class=\"pcite\">(Trích <i>Những mảnh ghép cuộc đời</i>, Jim Rohn, NXB Lao Động, 2022, tr.163-165)</p>",
+    "group": 11,
+    "range": [
+      11,
+      15
+    ],
+    "skill": "ND"
+  },
+  {
+    "id": 14,
+    "question": "Vì sao lựa chọn đôi khi lại là lời nguyền tai hại chứ không phải một phép màu ban tặng?",
+    "options": [
+      "Vì sự lựa chọn khiến con người không cố gắng",
+      "Vì khi được lựa chọn thì con người luôn chọn cách làm việc ít hơn khả năng thực tế",
+      "Vì con người có nhiều lựa chọn khác nhau",
+      "Vì có lúc con người lựa chọn không chính xác"
+    ],
+    "answer": 1,
+    "explanation": "Đoạn (4): khi được lựa chọn, con người thường chọn **cách làm việc ít hơn khả năng thực tế**.",
+    "passage": "<p>(1) Dường như mọi hình thức sống trên hành tinh này đều nỗ lực phát huy tối đa tiềm năng của mình, ngoại trừ loài người.</p><p>(2) Một cái cây không bao giờ mọc tới nửa kích thước tiềm năng của nó rồi nói: “Chắc tôi chỉ làm được đến vậy”. Một cái cây sẽ vươn bộ rễ của mình cắm càng sâu vào lòng đất càng tốt, tới kịch điểm sự cho phép của tự nhiên. Và rồi nó sẽ nhìn xuống chúng ta như thể nhắc nhở chúng ta rằng mỗi người đều có thể trở thành người như thế nào nếu chịu thực hiện tất cả những gì mình có thể.</p><p>(3) Tại sao loài người, hình thức sống thông minh nhất trên trái đất, lại không nỗ lực phát huy tối đa tiềm năng của bản thân? Tại sao chúng ta lại cho phép mình dừng lại ở giữa cuộc hành trình? Tại sao chúng ta lại không tiếp tục cố gắng trở thành tất cả những gì mà chúng ta có thể là? Lý do ở đây rất đơn giản: chúng ta được trao cho sự tự do trong lựa chọn.</p><p>(4) Trong hầu hết các trường hợp, quyền lựa chọn là món quà. Nhưng xét từ góc độ thực hiện tất cả những gì chúng ta có thể với những khả năng và cơ hội trước mắt, lựa chọn đôi khi lại là một lời nguyền tai hại chứ không phải là một phép màu ban tặng. Thường thì chúng ta sẽ lựa chọn cách làm việc ít hơn khả năng thực tế. Chúng ta muốn nằm dài nghỉ ngơi dưới bóng râm mát của một cái cây hơn là bắt chước quá trình vật lộn để vươn cao của nó...</p><p class=\"pcite\">(Trích <i>Những mảnh ghép cuộc đời</i>, Jim Rohn, NXB Lao Động, 2022, tr.163-165)</p>",
+    "group": 11,
+    "range": [
+      11,
+      15
+    ],
+    "skill": "ND"
+  },
+  {
+    "id": 15,
+    "question": "Phong cách ngôn ngữ được sử dụng trong đoạn trích trên là gì?",
+    "options": [
+      "Chính luận",
+      "Khoa học",
+      "Báo chí",
+      "Nghệ thuật"
+    ],
+    "answer": 0,
+    "explanation": "Văn bản bàn luận về một vấn đề của đời sống, mang tính quan điểm và thuyết phục: phong cách **chính luận**.",
+    "passage": "<p>(1) Dường như mọi hình thức sống trên hành tinh này đều nỗ lực phát huy tối đa tiềm năng của mình, ngoại trừ loài người.</p><p>(2) Một cái cây không bao giờ mọc tới nửa kích thước tiềm năng của nó rồi nói: “Chắc tôi chỉ làm được đến vậy”. Một cái cây sẽ vươn bộ rễ của mình cắm càng sâu vào lòng đất càng tốt, tới kịch điểm sự cho phép của tự nhiên. Và rồi nó sẽ nhìn xuống chúng ta như thể nhắc nhở chúng ta rằng mỗi người đều có thể trở thành người như thế nào nếu chịu thực hiện tất cả những gì mình có thể.</p><p>(3) Tại sao loài người, hình thức sống thông minh nhất trên trái đất, lại không nỗ lực phát huy tối đa tiềm năng của bản thân? Tại sao chúng ta lại cho phép mình dừng lại ở giữa cuộc hành trình? Tại sao chúng ta lại không tiếp tục cố gắng trở thành tất cả những gì mà chúng ta có thể là? Lý do ở đây rất đơn giản: chúng ta được trao cho sự tự do trong lựa chọn.</p><p>(4) Trong hầu hết các trường hợp, quyền lựa chọn là món quà. Nhưng xét từ góc độ thực hiện tất cả những gì chúng ta có thể với những khả năng và cơ hội trước mắt, lựa chọn đôi khi lại là một lời nguyền tai hại chứ không phải là một phép màu ban tặng. Thường thì chúng ta sẽ lựa chọn cách làm việc ít hơn khả năng thực tế. Chúng ta muốn nằm dài nghỉ ngơi dưới bóng râm mát của một cái cây hơn là bắt chước quá trình vật lộn để vươn cao của nó...</p><p class=\"pcite\">(Trích <i>Những mảnh ghép cuộc đời</i>, Jim Rohn, NXB Lao Động, 2022, tr.163-165)</p>",
+    "group": 11,
+    "range": [
+      11,
+      15
+    ],
+    "skill": "PC"
+  },
+  {
+    "id": 16,
+    "question": "Phương thức biểu đạt chính trong đoạn thơ trên là gì?",
+    "options": [
+      "Tự sự",
+      "Biểu cảm",
+      "Miêu tả",
+      "Thuyết minh"
+    ],
+    "answer": 1,
+    "explanation": "Đoạn thơ bộc lộ niềm xót thương, tri ân mẹ Tơm: phương thức chính là **biểu cảm**.",
+    "passage": "<p>Ôi bóng người xưa, đã khuất rồi<br>Tròn đôi nắm đất trắng chân đồi.<br>Sống trong cát, chết vùi trong cát<br>Những trái tim như ngọc sáng ngời!</p><p>Đốt nén hương thơm, mát dạ Người<br>Hãy về vui chút, mẹ Tơm ơi!<br>Nắng tươi xóm ngói, tường vôi mới<br>Phấp phới buồm dong, nắng biển khơi...</p><p class=\"pcite\">(Trích “<i>Mẹ Tơm</i>” – Nguyễn Kim Thành)</p>",
+    "group": 16,
+    "range": [
+      16,
+      20
+    ],
+    "skill": "PC"
+  },
+  {
+    "id": 17,
+    "question": "Trong câu thơ “Những trái tim như ngọc sáng ngời!” sử dụng biện pháp tu từ nào?",
+    "options": [
+      "So sánh, hoán dụ",
+      "Nhân hoá, so sánh",
+      "Hoán dụ, đảo ngữ",
+      "Ẩn dụ, hoán dụ"
+    ],
+    "answer": 0,
+    "explanation": "“**như** ngọc sáng ngời” là **so sánh**; “trái tim” chỉ con người (lấy bộ phận chỉ toàn thể) là **hoán dụ**.",
+    "passage": "<p>Ôi bóng người xưa, đã khuất rồi<br>Tròn đôi nắm đất trắng chân đồi.<br>Sống trong cát, chết vùi trong cát<br>Những trái tim như ngọc sáng ngời!</p><p>Đốt nén hương thơm, mát dạ Người<br>Hãy về vui chút, mẹ Tơm ơi!<br>Nắng tươi xóm ngói, tường vôi mới<br>Phấp phới buồm dong, nắng biển khơi...</p><p class=\"pcite\">(Trích “<i>Mẹ Tơm</i>” – Nguyễn Kim Thành)</p>",
+    "group": 16,
+    "range": [
+      16,
+      20
+    ],
+    "skill": "BP"
+  },
+  {
+    "id": 18,
+    "question": "Hai câu thơ “Nắng tươi xóm ngói, tường vôi mới - Phấp phới buồm dong, nắng biển khơi...” thể hiện điều gì?",
+    "options": [
+      "Hình ảnh thiên nhiên đất nước trong thời chiến tranh",
+      "Khung cảnh thiên nhiên vào buổi sáng sớm",
+      "Cuộc sống lao động của ngư dân vùng biển",
+      "Vẻ đẹp cuộc sống đang đổi thay từng ngày"
+    ],
+    "answer": 3,
+    "explanation": "“Xóm ngói, tường vôi mới” cho thấy làng chài đã khác xưa: **vẻ đẹp cuộc sống đang đổi thay từng ngày**.",
+    "passage": "<p>Ôi bóng người xưa, đã khuất rồi<br>Tròn đôi nắm đất trắng chân đồi.<br>Sống trong cát, chết vùi trong cát<br>Những trái tim như ngọc sáng ngời!</p><p>Đốt nén hương thơm, mát dạ Người<br>Hãy về vui chút, mẹ Tơm ơi!<br>Nắng tươi xóm ngói, tường vôi mới<br>Phấp phới buồm dong, nắng biển khơi...</p><p class=\"pcite\">(Trích “<i>Mẹ Tơm</i>” – Nguyễn Kim Thành)</p>",
+    "group": 16,
+    "range": [
+      16,
+      20
+    ],
+    "skill": "ND"
+  },
+  {
+    "id": 19,
+    "question": "Đoạn thơ sử dụng mấy cặp từ trái nghĩa?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": 0,
+    "explanation": "Có một cặp từ trái nghĩa: **sống – chết** (“Sống trong cát, chết vùi trong cát”).",
+    "passage": "<p>Ôi bóng người xưa, đã khuất rồi<br>Tròn đôi nắm đất trắng chân đồi.<br>Sống trong cát, chết vùi trong cát<br>Những trái tim như ngọc sáng ngời!</p><p>Đốt nén hương thơm, mát dạ Người<br>Hãy về vui chút, mẹ Tơm ơi!<br>Nắng tươi xóm ngói, tường vôi mới<br>Phấp phới buồm dong, nắng biển khơi...</p><p class=\"pcite\">(Trích “<i>Mẹ Tơm</i>” – Nguyễn Kim Thành)</p>",
+    "group": 16,
+    "range": [
+      16,
+      20
+    ],
+    "skill": "TN"
+  },
+  {
+    "id": 20,
+    "question": "Phong cách ngôn ngữ được sử dụng trong đoạn trích trên là gì?",
+    "options": [
+      "Nghệ thuật",
+      "Báo chí",
+      "Sinh hoạt",
+      "Khoa học"
+    ],
+    "answer": 0,
+    "explanation": "Văn bản là thơ, giàu hình ảnh và cảm xúc: phong cách ngôn ngữ **nghệ thuật**.",
+    "passage": "<p>Ôi bóng người xưa, đã khuất rồi<br>Tròn đôi nắm đất trắng chân đồi.<br>Sống trong cát, chết vùi trong cát<br>Những trái tim như ngọc sáng ngời!</p><p>Đốt nén hương thơm, mát dạ Người<br>Hãy về vui chút, mẹ Tơm ơi!<br>Nắng tươi xóm ngói, tường vôi mới<br>Phấp phới buồm dong, nắng biển khơi...</p><p class=\"pcite\">(Trích “<i>Mẹ Tơm</i>” – Nguyễn Kim Thành)</p>",
+    "group": 16,
+    "range": [
+      16,
+      20
+    ],
+    "skill": "PC"
+  },
+  {
+    "id": 21,
+    "question": "Xác định một từ/ cụm từ SAI về ngữ pháp/ ngữ nghĩa/ logic/ phong cách:",
+    "options": [
+      "hội chuẩn",
+      "liều lượng",
+      "phù hợp",
+      "điều trị"
+    ],
+    "answer": 0,
+    "explanation": "Từ đúng là **hội chẩn** (cùng bàn bạc để chẩn đoán bệnh); “hội chuẩn” là sai.",
+    "passage": "<p>Trong một phiên <u>hội chuẩn</u> trực tuyến, bác sĩ đã khẳng định ngoài <u>liều lượng</u> thuốc <u>phù hợp</u> với cân nặng của bệnh nhân thì các y bác sĩ trực tiếp <u>điều trị</u> phải quan tâm đến chế độ dinh dưỡng.</p>",
+    "group": 21,
+    "skill": "LS"
+  },
+  {
+    "id": 22,
+    "question": "Xác định một từ/ cụm từ SAI về ngữ pháp/ ngữ nghĩa/ logic/ phong cách:",
+    "options": [
+      "trôi qua",
+      "từ ngày",
+      "sau khi",
+      "chưa có"
+    ],
+    "answer": 2,
+    "explanation": "“Kể từ ngày” và “sau khi” cùng chỉ mốc thời gian nên bị **thừa, trùng lặp**; theo đáp án của đề, chọn **sau khi**.",
+    "passage": "<p>Đã mười năm <u>trôi qua</u> kể <u>từ ngày</u> <u>sau khi</u> ông nội mất, tôi <u>chưa có</u> dịp trở về thăm quê.</p>",
+    "group": 22,
+    "skill": "LS"
+  },
+  {
+    "id": 23,
+    "question": "Xác định một từ/ cụm từ SAI về ngữ pháp/ ngữ nghĩa/ logic/ phong cách:",
+    "options": [
+      "Truyện ngắn",
+      "sáng tác",
+      "năm 1954",
+      "Xóm ngụ cư"
+    ],
+    "answer": 3,
+    "explanation": "Theo đáp án của đề, cụm **“Xóm ngụ cư”** sai: đây không phải là tập truyện in truyện ngắn Làng.",
+    "passage": "<p><u>Truyện ngắn</u> “Làng” của Kim Lân được <u>sáng tác</u> <u>năm 1954</u> và được in trong tập “<u>Xóm ngụ cư</u>”.</p>",
+    "group": 23,
+    "skill": "LS"
+  },
+  {
+    "id": 24,
+    "question": "Xác định một từ/ cụm từ SAI về ngữ pháp/ ngữ nghĩa/ logic/ phong cách:",
+    "options": [
+      "tổng kết",
+      "Mông Nguyên",
+      "tuyên bố",
+      "chủ quyền"
+    ],
+    "answer": 1,
+    "explanation": "Bình Ngô đại cáo tổng kết cuộc kháng chiến chống **quân Minh**, không phải quân Mông Nguyên.",
+    "passage": "<p>Đại cáo bình Ngô là bản <u>tổng kết</u> cuộc kháng chiến chống quân <u>Mông Nguyên</u> gian khổ nhưng hào hùng, đồng thời <u>tuyên bố</u> nền độc lập <u>chủ quyền</u> của dân tộc.</p>",
+    "group": 24,
+    "skill": "LS"
+  },
+  {
+    "id": 25,
+    "question": "Xác định một từ/ cụm từ SAI về ngữ pháp/ ngữ nghĩa/ logic/ phong cách:",
+    "options": [
+      "cơ bản",
+      "hoạt động",
+      "sâu sắc",
+      "đại chúng"
+    ],
+    "answer": 1,
+    "explanation": "Nói về nền văn học thì phải dùng **phát triển** (“phát triển theo hướng cách mạng hoá”); “hoạt động” dùng sai ngữ nghĩa.",
+    "passage": "<p>Nền văn học Việt Nam từ năm 1945 đến năm 1975 có đặc điểm <u>cơ bản</u> là <u>hoạt động</u> theo hướng cách mạng hoá, gắn bó <u>sâu sắc</u> với vận mệnh chung của dân tộc, nền văn học hướng về <u>đại chúng</u> và mang khuynh hướng sử thi, cảm hứng lãng mạn.</p>",
+    "group": 25,
+    "skill": "LS"
+  },
+  {
+    "id": 26,
+    "question": "Chọn một từ mà nghĩa của nó KHÔNG cùng nhóm với các từ còn lại.",
+    "options": [
+      "Xung phong",
+      "Xung trận",
+      "Xung kích",
+      "Xung đột"
+    ],
+    "answer": 3,
+    "explanation": "Xung phong, xung trận, xung kích có “xung” là **lao lên phía trước, tấn công**; **xung đột** có “xung” nghĩa là va chạm.",
+    "group": 26,
+    "skill": "TN"
+  },
+  {
+    "id": 27,
+    "question": "Chọn một từ mà nghĩa của nó KHÔNG cùng nhóm với các từ còn lại.",
+    "options": [
+      "Lương thiện",
+      "lương tri",
+      "lương tâm",
+      "Lương thảo"
+    ],
+    "answer": 3,
+    "explanation": "Lương thiện, lương tri, lương tâm có “lương” là **tốt lành**; **lương thảo** có “lương” là lương thực.",
+    "group": 27,
+    "skill": "TN"
+  },
+  {
+    "id": 28,
+    "question": "Chọn một tác giả KHÔNG thuộc giai đoạn hiện thực 1930-1945:",
+    "options": [
+      "Nguyễn Minh Châu",
+      "Nam Cao",
+      "Nguyễn Công Hoan",
+      "Vũ Trọng Phụng"
+    ],
+    "answer": 0,
+    "explanation": "Nam Cao, Nguyễn Công Hoan, Vũ Trọng Phụng thuộc văn học hiện thực 1930–1945; **Nguyễn Minh Châu** là nhà văn thời kì chống Mỹ và sau 1975.",
+    "group": 28,
+    "skill": "VH"
+  },
+  {
+    "id": 29,
+    "question": "Chọn một tác phẩm KHÔNG cùng thể loại với tác phẩm còn lại:",
+    "options": [
+      "Thương vợ",
+      "Câu cá mùa thu",
+      "Tự tình",
+      "Vào phủ chúa Trịnh"
+    ],
+    "answer": 3,
+    "explanation": "Thương vợ, Câu cá mùa thu, Tự tình là thơ; **Vào phủ chúa Trịnh** (Lê Hữu Trác) là kí sự.",
+    "group": 29,
+    "skill": "VH"
+  },
+  {
+    "id": 30,
+    "question": "Chọn một tác phẩm KHÔNG cùng thể loại với tác phẩm còn lại:",
+    "options": [
+      "Cha con nghĩa nặng",
+      "Vi hành",
+      "Tinh thần thể dục",
+      "Chữ người tử tù"
+    ],
+    "answer": 0,
+    "explanation": "Theo đáp án của đề, ba tác phẩm Vi hành, Tinh thần thể dục, Chữ người tử tù là truyện ngắn; **Cha con nghĩa nặng** khác thể loại.",
+    "group": 30,
+    "skill": "VH"
+  },
+  {
+    "id": 31,
+    "question": "Chọn từ/ cụm từ thích hợp nhất để điền vào chỗ trống trong câu dưới đây:",
+    "options": [
+      "khoa học",
+      "nhẹ nhàng",
+      "hào hùng",
+      "trang trọng"
+    ],
+    "answer": 0,
+    "explanation": "Bài viết nghị luận văn hoá, “chính xác, mạch lạc” phù hợp với văn phong **khoa học**.",
+    "passage": "<p>Trong văn bản “Nhìn về vốn văn hoá dân tộc”, từ vốn hiểu biết sâu sắc về vốn văn hoá dân tộc, tác giả Trần Đình Hượu đã phân tích rõ những mặt tích cực và một số hạn chế của văn hoá truyền thống. Bài viết có văn phong ……………. chính xác, mạch lạc.</p>",
+    "group": 31,
+    "skill": "DT"
+  },
+  {
+    "id": 32,
+    "question": "Chọn từ/ cụm từ thích hợp nhất để điền vào chỗ trống trong câu dưới đây:",
+    "options": [
+      "tráng ca",
+      "anh hùng ca",
+      "trường ca",
+      "sử thi"
+    ],
+    "answer": 3,
+    "explanation": "Rừng xà nu mang vẻ đẹp hào hùng, tráng lệ của cả cộng đồng: một khúc **sử thi** trong văn xuôi hiện đại.",
+    "passage": "<p>Rừng xà nu là một thiên truyện mang ý nghĩa và vẻ đẹp của một khúc ……………trong văn xuôi hiện đại. Với lời văn trau chuốt, giàu hình ảnh, tác phẩm đã tái hiện được vẻ đẹp tráng lệ, hào hùng của núi rừng, của con người và của truyền thống văn hoá Tây Nguyên.</p>",
+    "group": 32,
+    "skill": "DT"
+  },
+  {
+    "id": 33,
+    "question": "Chọn từ/ cụm từ thích hợp nhất để điền vào chỗ trống trong câu dưới đây:",
+    "options": [
+      "Nhận thức/ tiếp nhận",
+      "Nhận thức/ sáng tác",
+      "Tri thức/ sáng tác",
+      "Hiểu biết/ tiếp nhận"
+    ],
+    "answer": 0,
+    "explanation": "Ba giá trị cơ bản của văn học là **nhận thức**, giáo dục, thẩm mĩ; các giá trị được thực hiện qua quá trình **tiếp nhận** văn học.",
+    "passage": "<p>Văn học có ba giá trị cơ bản là…………., giáo dục, thẩm mĩ. Các giá trị văn học được thực hiện thông qua quá trình ………….văn học với các tính chất và cấp độ khác nhau.</p>",
+    "group": 33,
+    "skill": "DT"
+  },
+  {
+    "id": 34,
+    "question": "Chọn từ/ cụm từ thích hợp nhất để điền vào chỗ trống trong câu dưới đây:",
+    "options": [
+      "Hoàn cảnh",
+      "Ngữ cảnh",
+      "Đối tượng",
+      "Khung cảnh"
+    ],
+    "answer": 1,
+    "explanation": "Trong giao tiếp, nhân vật giao tiếp lựa chọn chiến lược phù hợp tuỳ thuộc vào **ngữ cảnh** giao tiếp.",
+    "passage": "<p>Để đạt được mục đích và hiệu quả giao tiếp, mỗi nhân vật giao tiếp tuỳ thuộc vào………………………mà lựa chọn và thực hiện một chiến lược giao tiếp phù hợp.</p>",
+    "group": 34,
+    "skill": "DT"
+  },
+  {
+    "id": 35,
+    "question": "Chọn từ/ cụm từ thích hợp nhất để điền vào chỗ trống trong câu dưới đây:",
+    "options": [
+      "Thông điệp",
+      "nhật kí",
+      "bức thư",
+      "ý tưởng"
+    ],
+    "answer": 2,
+    "explanation": "Vi hành được viết dưới hình thức một **bức thư** gửi cho cô em gái.",
+    "passage": "<p>Tác phẩm “Vi hành” của Nguyễn Ái Quốc được viết dưới hình thức độc đáo. Đó là một……………..gửi cho cô em gái.</p>",
+    "group": 35,
+    "skill": "DT"
+  },
+  {
+    "id": 36,
+    "question": "Đọc đoạn trích và trả lời: Nội dung chính của đoạn trích trên là gì?",
+    "options": [
+      "Đá bờ sông dựng vách thành",
+      "Quãng mặt ghềnh Hát-Loong",
+      "Thác nước",
+      "Quãng Tà Mường Vát"
+    ],
+    "answer": 2,
+    "explanation": "Đoạn văn tả tiếng nước réo, “oán trách”, “van xin”, “khiêu khích”, rồi “rống lên như ngàn con trâu mộng” là tả **thác nước**.",
+    "passage": "<p>“... Còn xa lắm mới đến cái thác dưới. Nhưng đã thấy tiếng nước réo gần mãi lại réo to mãi lên. Tiếng nước thác nghe như là oán trách gì, rồi lại như là van xin, rồi lại như là khiêu khích, giọng gằn mà chế nhạo. Thế rồi nó rống lên như tiếng một ngàn con trâu mộng đang lồng lộn giữa rừng vầu tre nứa nổ lửa, đang phá tuông rừng lửa, rừng lửa cùng gầm thét với đàn trâu da cháy bùng.”</p><p class=\"pcite\">(<i>Người lái đò Sông Đà</i> – Nguyễn Tuân)</p>",
+    "group": 36,
+    "skill": "PT"
+  },
+  {
+    "id": 37,
+    "question": "Đoạn văn trên có những đặc sắc gì về diễn đạt?",
+    "options": [
+      "Dùng từ chính xác, độc đáo; viết văn giàu hình ảnh",
+      "Viết văn giàu hình ảnh; sử dụng các phép tu từ lặp cú pháp, liệt kê",
+      "Dùng từ chính xác, độc đáo; sử dụng các phép tu từ lặp cú pháp, liệt kê",
+      "Viết văn giàu hình ảnh; sử dụng các phép tu từ chêm xen, liệt kê"
+    ],
+    "answer": 1,
+    "explanation": "Đoạn văn nối hàng loạt hình ảnh (“hồn thơ rộng mở như…, mơ màng như…”): **giàu hình ảnh**, dùng **lặp cú pháp** và **liệt kê**.",
+    "passage": "<p>Tôi quyết rằng trong lịch sử thi ca Việt Nam chưa bao giờ có một thời đại phong phú như thời đại này. Chưa bao giờ người ta thấy xuất hiện cùng một lúc một hồn thơ rộng mở như Thế Lữ, mơ màng như Lưu Trọng Lư, hùng tráng như Huy Thông, trong sáng như Nguyễn Nhược Pháp, ảo não như Huy Cận, quê mùa như Nguyễn Bính, kì dị như Chế Lan Viên... và thiết tha, rạo rực, băn khoăn như Xuân Diệu.</p><p class=\"pcite\">(Hoài Thanh – Hoài Chân, <i>Thi nhân Việt Nam</i>, NXB Văn học, 2000)</p>",
+    "group": 37,
+    "skill": "BP"
+  },
+  {
+    "id": 38,
+    "question": "Đoạn trích trên sử dụng mấy thành ngữ?",
+    "options": [
+      "Hai",
+      "Ba",
+      "Bốn",
+      "Năm"
+    ],
+    "answer": 0,
+    "explanation": "Hai thành ngữ: **“một duyên hai nợ”** và **“năm nắng mười mưa”**.",
+    "passage": "<p>Lặn lội thân cò khi quãng vắng,<br>Eo sèo mặt nước buổi đò đông.<br>Một duyên hai nợ âu đành phận,<br>Năm nắng mười mưa dám quản công.</p><p class=\"pcite\">(Trần Tế Xương, <i>Thương vợ</i>, SGK Ngữ văn 11, tập một, NXB GD, 2020)</p>",
+    "group": 38,
+    "skill": "TN"
+  },
+  {
+    "id": 39,
+    "question": "Đoạn văn trên sử dụng ngôn ngữ trần thuật nào?",
+    "options": [
+      "Ngôn ngữ độc thoại",
+      "Ngôn ngữ đối thoại",
+      "Ngôn ngữ độc thoại nội tâm",
+      "Ngôn ngữ hàm ẩn"
+    ],
+    "answer": 2,
+    "explanation": "Mị tự nói với mình, nghĩ về mình và A Phủ, không có người đối thoại: **ngôn ngữ độc thoại nội tâm**.",
+    "passage": "<p>Trời ơi, nó bắt trói đứng người ta đến chết, nó bắt mình chết cũng thôi, nó bắt trói đến chết người đàn bà ngày trước cũng ở cái nhà này. Chúng nó thật độc ác. Cơ chừng này chỉ đêm mai là người kia chết, chết đau, chết đói, chết rét, phải chết. Ta là thân đàn bà, nó đã bắt ta về trình ma nhà nó rồi thì chỉ còn biết đợi ngày rũ xương ở đây thôi… Người kia việc gì mà phải chết thế. A Phủ…</p><p class=\"pcite\">(Tô Hoài, <i>Vợ chồng A Phủ</i>, Ngữ văn 12, tập hai, NXB Giáo dục Việt Nam, 2020)</p>",
+    "group": 39,
+    "skill": "BP"
+  },
+  {
+    "id": 40,
+    "question": "Chi tiết “Nếu có nắm lá ngón trong tay lúc này, Mị sẽ ăn cho chết ngay” có ý nghĩa gì?",
+    "options": [
+      "Sự chán nản của Mị vì không được đi chơi xuân",
+      "Sự vô cảm của Mị",
+      "Ý thức phản kháng đã trỗi dậy trong Mị",
+      "Mị buồn khi phải sống với người mình không yêu"
+    ],
+    "answer": 2,
+    "explanation": "Mị không còn cam chịu: thà chết còn hơn sống tủi nhục, cho thấy **ý thức phản kháng đã trỗi dậy**.",
+    "passage": "<p>Mị trẻ lắm. Mị vẫn còn trẻ. Mị muốn đi chơi. Bao nhiêu người có chồng cũng đi chơi ngày Tết. Huống chi A Sử với Mị, không có lòng mà vẫn phải ở với nhau! Nếu có nắm lá ngón trong tay lúc này, Mị sẽ ăn cho chết ngay, chứ không buồn nhớ lại nữa. Nhớ lại chỉ thấy nước mắt ứa ra.</p><p class=\"pcite\">(Tô Hoài, <i>Vợ chồng A Phủ</i>, SGK Ngữ văn 12, tập hai, NXB GD, 2020)</p>",
+    "group": 40,
+    "skill": "PT"
+  },
+  {
+    "id": 41,
+    "question": "Đoạn thơ trên thể hiện vẻ đẹp gì của Bác Hồ?",
+    "options": [
+      "Thanh cao, giản dị",
+      "Giản dị",
+      "Tràn đầy tình yêu thương",
+      "Cao cả vĩ đại mà gần gũi đời thường"
+    ],
+    "answer": 3,
+    "explanation": "“Một đời thanh bạch… hồn muôn trượng / Hơn tượng đồng”: Bác **cao cả, vĩ đại mà gần gũi đời thường**.",
+    "passage": "<p>Bác để tình thương cho chúng con<br>Một đời thanh bạch chẳng vàng son<br>Mong manh áo vải hồn muôn trượng<br>Hơn tượng đồng phơi những lối mòn.</p><p class=\"pcite\">(Tố Hữu, <i>Bác ơi</i>, Ngữ văn 12, tập một, NXB Giáo dục Việt Nam, 2020)</p>",
+    "group": 41,
+    "skill": "PT"
+  },
+  {
+    "id": 42,
+    "question": "“Từ ấy” (gạch chân, in đậm) là thời điểm nào?",
+    "options": [
+      "Năm 1938, khi tác giả được kết nạp vào Đảng Cộng sản.",
+      "Năm 1945, khi Cách mạng tháng Tám thắng lợi.",
+      "Năm 1954, khi chiến dịch Điện Biên Phủ thắng lợi",
+      "Năm 1930, khi Đảng Cộng sản Việt Nam ra đời."
+    ],
+    "answer": 0,
+    "explanation": "“Từ ấy” là thời điểm **năm 1938**, khi Tố Hữu được kết nạp vào Đảng Cộng sản.",
+    "passage": "<p><u><b>Từ ấy</b></u> trong tôi bừng nắng hạ<br>Mặt trời chân lí chói qua tim<br>Hồn tôi là một vườn hoa lá<br>Rất đậm hương và rộn tiếng chim.</p><p class=\"pcite\">(Tố Hữu, <i>Từ ấy</i>, Ngữ văn 11, tập hai, NXB Giáo dục Việt Nam, 2020)</p>",
+    "group": 42,
+    "skill": "VH"
+  },
+  {
+    "id": 43,
+    "question": "Từ “đòi nợ xuýt” trong đoạn trích trên có nghĩa là gì?",
+    "options": [
+      "Đòi người không mắc nợ mình một cách vô lí",
+      "Đòi nợ một cách dữ dằn.",
+      "Đòi nợ của người đang có nợ với mình.",
+      "Đòi nợ một cách quá đáng."
+    ],
+    "answer": 0,
+    "explanation": "Theo đáp án của đề, “đòi nợ xuýt” là **đòi người không mắc nợ mình một cách vô lí**.",
+    "passage": "<p>Lại như quãng mặt ghềnh Hát Loóng, dài hàng cây số nước xô đá, đá xô sóng, sóng xô gió. Cuốn cuộn luồng gió gùn ghè suốt năm như lúc nào cũng <b>đòi nợ xuýt</b> bất cứ người lái đò sông Đà nào tóm được qua quãng đấy. Quãng này mà khinh suất tay lái thì cũng dễ lật ngửa bụng thuyền ra.</p><p class=\"pcite\">(<i>Người lái đò sông Đà</i> – Nguyễn Tuân)</p>",
+    "group": 43,
+    "skill": "TN"
+  },
+  {
+    "id": 44,
+    "question": "Đoạn trích trên bộc lộ sắc thái tình cảm nào của tác giả?",
+    "options": [
+      "Cảm thông, xót xa",
+      "Căm phẫn, yêu thương",
+      "Phẫn uất, lên án",
+      "Căm phẫn, tiếc nuối"
+    ],
+    "answer": 2,
+    "explanation": "Các câu liệt kê tội ác “chúng bóc lột, cướp, giữ độc quyền, đặt ra hàng trăm thứ thuế” bộc lộ **sự phẫn uất, lên án** thực dân Pháp.",
+    "passage": "<p>Về kinh tế, chúng bóc lột dân ta đến tận xương tủy, khiến cho dân ta nghèo nàn, thiếu thốn, nước ta xơ xác, tiêu điều. Chúng cướp không ruộng đất, hầm mỏ, nguyên liệu. Chúng giữ độc quyền in giấy bạc, xuất cảng và nhập cảng. Chúng đặt ra hàng trăm thứ thuế vô lý, làm cho dân ta, nhất là dân cày và dân buôn, trở nên bần cùng.</p><p class=\"pcite\">(Hồ Chí Minh, <i>Tuyên ngôn độc lập</i>, Ngữ văn 12, tập một, NXB Giáo dục Việt Nam, 2020)</p>",
+    "group": 44,
+    "skill": "PT"
+  },
+  {
+    "id": 45,
+    "question": "Nội dung chính của đoạn thơ trên là gì?",
+    "options": [
+      "Lối sống ngất ngưởng khi làm quan trong triều",
+      "Lối sống ngất ngưởng khi cáo quan về hưu",
+      "Lối sống khác người, khác đời",
+      "Lối sống coi thường danh lợi"
+    ],
+    "answer": 1,
+    "explanation": "Đoạn thơ (phần sau của bài) nói về lối sống **ngất ngưởng khi cáo quan về hưu**: dạo chơi, ca, tửu, “không Phật, không tiên, không vướng tục”.",
+    "passage": "<p>Đô môn giải tổ chi niên,<br>Đạc ngựa bò vàng đeo ngất ngưởng.<br>Kìa núi nọ phau phau mây trắng,<br>Tay kiếm cung mà nên dạng từ bi.<br>Gót tiên theo đủng đỉnh một đôi dì,<br>Bụt cũng nực cười ông ngất ngưởng.<br>Được mất dương dương người tái thượng,<br>Khen chê phơi phới ngọn đông phong.<br>Khi ca, khi tửu, khi cắc, khi tùng,<br>Không Phật, không tiên, không vướng tục.</p><p class=\"pcite\">(Trích “<i>Bài ca ngất ngưởng</i>” – Nguyễn Công Trứ)</p>",
+    "group": 45,
+    "skill": "PT"
+  },
+  {
+    "id": 46,
+    "question": "Đoạn văn trên sử dụng thao tác lập luận nào?",
+    "options": [
+      "Phân tích",
+      "Chứng minh",
+      "Bình luận",
+      "Giải thích"
+    ],
+    "answer": 2,
+    "explanation": "Tác giả đánh giá, bày tỏ tiếc thương và kêu gọi: thao tác **bình luận**.",
+    "passage": "<p>Một người như cô phải chết đi thật tiếc, lại một hạt bụi vàng của Hà Nội rơi xuống chìm sâu vào lớp đất cổ. Những hạt bụi vàng lấp lánh đâu đó ở mỗi góc phố Hà Nội hãy mượn gió mà bay lên cho đất kinh kì chói sáng những ánh vàng”</p><p class=\"pcite\">(Trích <i>Một người Hà Nội</i> – Nguyễn Khải)</p>",
+    "group": 46,
+    "skill": "PC"
+  },
+  {
+    "id": 47,
+    "question": "Câu thơ “Bác Dương thôi đã thôi rồi” sử dụng biện pháp tu từ nào?",
+    "options": [
+      "Nói quá",
+      "Nói giảm nói tránh",
+      "Ẩn dụ",
+      "Hoán dụ"
+    ],
+    "answer": 1,
+    "explanation": "“Thôi đã thôi rồi” là cách nói tránh sự mất mát, cái chết: **nói giảm nói tránh**.",
+    "passage": "<p>Bác Dương thôi đã thôi rồi,<br>Nước mây man mác ngậm ngùi lòng ta.<br>Nhớ từ thuở đăng khoa ngày trước,<br>Vẫn sớm hôm tôi bác cùng nhau;<br>Kính yêu từ trước đến sau,<br>Trong khi gặp gỡ khác đâu duyên trời?</p><p class=\"pcite\">(Trích “<i>Khóc Dương Khuê</i>” – Nguyễn Khuyến, SGK Ngữ văn 11, tập một)</p>",
+    "group": 47,
+    "skill": "BP"
+  },
+  {
+    "id": 48,
+    "question": "Từ “lẫn” ở câu thơ “Trường Nam thì lẫn với trường Hà” có ý nghĩa như thế nào?",
+    "options": [
+      "Phản ánh tình trạng lộn xộn, bát nháo ở trường thi",
+      "Sự thay đổi của địa điểm thi cử",
+      "Sự kết hợp giữa các trường thi",
+      "Trộn lẫn sĩ tử các trường thi"
+    ],
+    "answer": 0,
+    "explanation": "Từ “lẫn” phản ánh **tình trạng lộn xộn, bát nháo** của kì thi cuối thời phong kiến, khi hai trường thi bị gộp lại.",
+    "passage": "<p>Nhà nước ba năm mở hội khoa<br>Trường Nam thì lẫn với trường Hà<br>Lôi thôi sĩ tử vai đeo lọ<br>Âm ọe quan trường miệng thét loa<br>Lọng cắm rợp trời quan sứ đến<br>Váy lê quét đấy mụ đầm ra<br>Nhân tài đất Bắc nào ai đó<br>Ngoảnh cổ mà trông cảnh nước nhà.</p><p class=\"pcite\">(Trích “<i>Vịnh khoa thi hương</i>” – Tú Xương)</p>",
+    "group": 48,
+    "skill": "TN"
+  },
+  {
+    "id": 49,
+    "question": "Nội dung chính của đoạn trích trên là gì?",
+    "options": [
+      "Không khí Tết tưng bừng, náo nức",
+      "Tết cổ truyền của dân tộc ta bao đời nay vẫn luôn giữ được những nét đẹp truyền thống và giàu bản sắc",
+      "Những phong tục ngày Tết",
+      "Tâm trạng phấn chấn của con người trước cảnh đẹp mùa xuân"
+    ],
+    "answer": 1,
+    "explanation": "Điệp ngữ “Vẫn là… Vẫn…” nhấn mạnh Tết cổ truyền **vẫn giữ nguyên nét đẹp truyền thống và giàu bản sắc**.",
+    "passage": "<p>“Vẫn là ngày hăm ba cúng ông Táo, đêm ba mươi cúng tất niên, hái cành lộc. Vẫn là ngày mồng một he hé cửa đón đợi người xông nhà, dặn dò nhau ý tứ giữ gìn kiêng cữ cho khỏi dông cả năm dài. Ngày đầu xuân, cơm nguội không rang để cho đời khỏi khô kháo, nhà không quét cho tài lộc khỏi thất tán. Vẫn là mùi hương hoa ngan ngát nơi bàn thờ ấy. Vẫn là làn không khí mới mẻ, hơi bỡ ngỡ, trịnh trọng ấy. Vẫn những gương mặt cởi mở, chan hoà giữa khung cảnh trời đất tươi đẹp vì được niềm phấn chấn của con người thâm nhập giao hoà.”</p><p class=\"pcite\">(Trích <i>Mùa lá rụng trong vườn</i> – Ma Văn Kháng)</p>",
+    "group": 49,
+    "skill": "PT"
+  },
+  {
+    "id": 50,
+    "question": "Từ “Nó” trong câu “Nó là một cơn mưa gió cuối thu cho biết trời gió rét, nay mùa đông đã đến” chỉ điều gì?",
+    "options": [
+      "Trận ốm Chí Phèo vừa trải qua",
+      "Những chất độc đày đoạ Chí",
+      "Tuổi già của Chí Phèo",
+      "Sự cô độc của Chí"
+    ],
+    "answer": 0,
+    "explanation": "“Nó” thay cho **trận ốm** mà Chí Phèo vừa trải qua, được ví như cơn mưa gió cuối thu báo hiệu mùa đông (tuổi già).",
+    "passage": "<p>“Tỉnh dậy hắn thấy già mà vẫn còn cô độc. Buồn thay cho đời! Có lý nào như thế được? Hắn đã già rồi hay sao? Ngoài bốn mươi tuổi đầu... Dẫu sao, đó không phải tuổi mà người ta mới bắt đầu sửa soạn. Hắn đã tới cái dốc bên kia của đời. Ở những người như hắn, chịu đựng biết bao nhiêu là chất độc, đày đọa cực nhọc mà chưa bao giờ ốm, một trận ốm có thể gọi là dấu hiệu báo rằng cơ thể đã hư hỏng nhiều. <b><i>Nó</i></b> là một cơn mưa gió cuối thu cho biết trời gió rét, nay mùa đông đã đến. Chí Phèo hình như đã trông thấy trước tuổi già của hắn, đói rét và ốm đau, và cô độc, cái này còn đáng sợ hơn đói rét và ốm đau.”</p><p class=\"pcite\">(Trích “<i>Chí Phèo</i>” – Nam Cao)</p>",
+    "group": 50,
+    "skill": "TN"
+  }
+];
+        let state = {
+            questions: [],       // Processed array with shuffled options
+            userAnswers: {},     // qId -> selectedIndex
+            isSubmitted: false,  // True only after clicking NỘP BÀI
+            timerSeconds: 60 * 60,
+            timerInterval: null,
+            flagged: {}          // qId -> true (câu đánh dấu chưa làm được)
+        };
+
+        window.onload = function() {
+            initTest();
+        };
+
+        // Fisher-Yates Option Shuffling
+        // ===== Nhận diện câu trả lời ngắn =====
+        // Câu có cả 4 phương án đều là một giá trị số ngắn (số nguyên, phân số, số thập phân, ln n)
+        // sẽ tự chuyển sang dạng điền kết quả thay vì chọn A-B-C-D.
+        function parseOptionValue(tex) {
+            const t = String(tex).replace(/\$/g, '').replace(/\s+/g, '');
+            let m;
+            if ((m = t.match(/^(-?)\\d?frac\{(-?\d+)\}\{(-?\d+)\}$/))) {
+                const num = (m[1] ? -1 : 1) * Number(m[2]), den = Number(m[3]);
+                return den ? { kind: 'frac', num, den, value: num / den } : null;
+            }
+            if ((m = t.match(/^-?\d+$/))) {
+                return { kind: 'frac', num: Number(t), den: 1, value: Number(t) };
+            }
+            if ((m = t.match(/^(-?)\\ln(\d+)$/))) {
+                const sign = m[1] ? -1 : 1, arg = Number(m[2]);
+                return { kind: 'ln', sign, arg, value: sign * Math.log(arg) };
+            }
+            if ((m = t.match(/^-?\d+\.\d+$/))) {
+                const k = t.split('.')[1].length;
+                const den = Math.pow(10, k), num = Math.round(Number(t) * den);
+                return { kind: 'frac', num, den, value: Number(t) };
+            }
+            return null;
+        }
+
+        function detectShort(q) {
+            const vals = q.options.map(parseOptionValue);
+            if (vals.length < 2 || vals.some(v => !v)) return null;
+            return vals[q.answer];
+        }
+
+        function parseUserAnswer(str) {
+            let t = String(str).trim().toLowerCase()
+                .replace(/[−–—]/g, '-').replace(/,/g, '.').replace(/\s+/g, '');
+            t = t.replace(/\\?d?frac\{(-?\d+)\}\{(-?\d+)\}/, '$1/$2');
+            let m;
+            if ((m = t.match(/^(-?)\(?(-?\d+)\)?\/\(?(-?\d+)\)?$/))) {
+                const den = Number(m[3]);
+                return den ? { kind: 'frac', num: (m[1] ? -1 : 1) * Number(m[2]), den } : null;
+            }
+            if (/^-?\d+$/.test(t)) return { kind: 'frac', num: Number(t), den: 1 };
+            if ((m = t.match(/^(-?)(\d*\.\d+)$/))) {
+                return { kind: 'dec', value: Number(t), d: m[2].split('.')[1].length };
+            }
+            if ((m = t.match(/^(-?)ln\(?(\d+)\)?$/))) {
+                return { kind: 'ln', sign: m[1] ? -1 : 1, arg: Number(m[2]) };
+            }
+            return null;
+        }
+
+        function checkShort(q, input) {
+            const c = q.short, u = parseUserAnswer(input);
+            if (!c || !u) return false;
+            if (u.kind === 'dec') {
+                return u.d >= 3 && c.value.toFixed(u.d) === u.value.toFixed(u.d);
+            }
+            if (c.kind === 'frac' && u.kind === 'frac') return u.num * c.den === c.num * u.den;
+            if (c.kind === 'ln' && u.kind === 'ln') return u.arg === c.arg && u.sign === c.sign;
+            return false;
+        }
+
+        function isCorrect(q) {
+            if (!state.userAnswers.hasOwnProperty(q.id)) return false;
+            const a = state.userAnswers[q.id];
+            return q.short ? checkShort(q, a) : a === q.correctIndex;
+        }
+
+        function escAttr(v) {
+            return String(v).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+        }
+
+        function setShortAnswer(qId, val) {
+            if (state.isSubmitted) return;
+            if (String(val).trim() === '') delete state.userAnswers[qId];
+            else state.userAnswers[qId] = val;
+            updateProgress();
+            renderMatrix();
+        }
+
+        function shortAnswerHtml(q) {
+            const isAnswered = state.userAnswers.hasOwnProperty(q.id);
+            const val = isAnswered ? String(state.userAnswers[q.id]) : '';
+            let cls = 'short-input';
+            let note = '';
+            if (state.isSubmitted) {
+                const ok = isAnswered && checkShort(q, val);
+                cls += ok ? ' ok' : ' bad';
+                note = `
+                    <div class="flex flex-wrap items-center gap-2 text-sm animate-fadeIn">
+                        <span class="text-slate-400 text-xs font-semibold uppercase tracking-wider">Đáp án đúng</span>
+                        <span class="math-content px-3 py-1.5 rounded-xl bg-emerald-950/80 border border-emerald-500 text-emerald-200 font-bold">${fmt(q.options[q.answer])}</span>
+                        ${isAnswered ? '' : '<span class="text-xs text-slate-400">(bạn chưa điền)</span>'}
+                    </div>`;
+            }
+            return `
+                <div class="pt-2 space-y-3">
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-pink-300" for="short-${q.id}">Điền kết quả của bạn</label>
+                    <input id="short-${q.id}" type="text" autocomplete="off" spellcheck="false"
+                           class="${cls}" value="${escAttr(val)}" ${state.isSubmitted ? 'disabled' : ''}
+                           placeholder="Nhập kết quả của bạn..."
+                           oninput="setShortAnswer(${q.id}, this.value)"
+                           onkeydown="if(event.key==='Enter'){this.blur();}">
+                    ${state.isSubmitted ? '' : '<p class="text-[11px] text-slate-400">Nhập số nguyên, phân số dạng a/b hoặc số thập phân (từ 3 chữ số thập phân trở lên).</p>'}
+                    ${note}
+                </div>`;
+        }
+
+        function prepareQuestions(rawBank) {
+            // Giữ nguyên thứ tự A-B-C-D như đề gốc; q.answer là chỉ số đáp án đúng
+            return rawBank.map(q => ({
+                ...q,
+                shuffledOptions: [...q.options],
+                correctIndex: q.answer,
+                short: null
+            }));
+        }
+
+        function initTest() {
+            state.userAnswers = {};
+            state.flagged = {};
+            state.isSubmitted = false;
+            document.getElementById('examTimerBox').classList.remove('hidden');
+            document.getElementById('submitExamBtn').classList.remove('hidden');
+            document.getElementById('viewResultBtn').classList.add('hidden');
+            document.getElementById('restartBtn').classList.add('hidden');
+            state.questions = prepareQuestions(RAW_QUESTION_BANK);
+            const nShort = state.questions.filter(q => q.short).length;
+            document.getElementById('heroCount').innerText = `${state.questions.length} câu trắc nghiệm`;
+
+            // Update UI status banner
+            document.getElementById('legendSelected').classList.remove('hidden');
+            document.getElementById('legendCorrect').classList.add('hidden');
+            document.getElementById('legendIncorrect').classList.add('hidden');
+
+            // Chưa chạy đồng hồ: chờ người dùng bấm "Bắt đầu làm bài"
+            clearInterval(state.timerInterval);
+            state.timerSeconds = 60 * 60;
+            updateTimerDisplay();
+            renderAll();
+            showStartScreen();
+        }
+
+        function showStartScreen() {
+            const qs = state.questions;
+            const el = document.getElementById('startScreen');
+            el.classList.remove('hidden');
+            el.scrollTop = 0;
+            document.documentElement.classList.add('lock-scroll');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function beginTest() {
+            document.getElementById('startScreen').classList.add('hidden');
+            document.documentElement.classList.remove('lock-scroll');
+            document.body.classList.remove('overflow-hidden');
+
+            updateMusicUI();
+
+            window.scrollTo({ top: 0 });
+            startTimer(state.timerSeconds);   // đồng hồ chỉ bắt đầu chạy từ lúc này
+        }
+
+
+        function startTimer(seconds) {
+            clearInterval(state.timerInterval);
+            state.timerSeconds = seconds;
+            updateTimerDisplay();
+
+            state.timerInterval = setInterval(() => {
+                state.timerSeconds--;
+                updateTimerDisplay();
+                if (state.timerSeconds <= 0) {
+                    clearInterval(state.timerInterval);
+                    if (!state.isSubmitted) executeSubmit();   // hết giờ: tự động nộp
+                }
+            }, 1000);
+        }
+
+        function updateTimerDisplay() {
+            const mins = Math.floor(state.timerSeconds / 60);
+            const secs = state.timerSeconds % 60;
+            document.getElementById('timerDisplay').innerText = 
+                `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        // ===== Nhạc tập trung: tạo âm thanh trực tiếp bằng Web Audio (không cần file nhạc) =====
+        const Music = {
+            ctx: null, master: null, bus: null,
+            playing: false, mode: 'beta', volume: 0.7,
+            binL: null, binR: null, padOscs: [], padIdx: 0,
+            noteTimer: null, chordTimer: null, stopTimer: null,
+            BASE: 180,
+            MODES: {
+                alpha: { hz: 10, name: 'Alpha 10 Hz', desc: 'Thư giãn, tập trung nhẹ nhàng' },
+                beta:  { hz: 18, name: 'Beta 18 Hz',  desc: 'Tỉnh táo, tập trung giải bài' },
+                gamma: { hz: 40, name: 'Gamma 40 Hz', desc: 'Tư duy, ghi nhớ' }
+            },
+            CHORDS: [
+                [110.00, 164.81, 220.00, 261.63],   // Am
+                [87.31, 130.81, 174.61, 220.00],    // F
+                [130.81, 196.00, 261.63, 329.63],   // C
+                [98.00, 146.83, 196.00, 246.94]     // G
+            ],
+            SCALE: [220.00, 261.63, 293.66, 329.63, 392.00, 440.00, 523.25],
+
+            level() { return Math.pow(this.volume, 1.4); },
+
+            init() {
+                if (this.ctx) return true;
+                const AC = window.AudioContext || window.webkitAudioContext;
+                if (!AC) return false;
+                const c = this.ctx = new AC();
+
+                this.master = c.createGain();
+                this.master.gain.value = 0;
+                const comp = c.createDynamicsCompressor();
+                this.master.connect(comp);
+                comp.connect(c.destination);
+
+                // Bus nhạc nền: lọc mềm + vọng nhẹ
+                this.bus = c.createGain();
+                this.bus.gain.value = 1.0;
+                const lp = c.createBiquadFilter();
+                lp.type = 'lowpass';
+                lp.frequency.value = 1700;
+                const delay = c.createDelay(1.5);
+                delay.delayTime.value = 0.46;
+                const fb = c.createGain();
+                fb.gain.value = 0.36;
+                this.bus.connect(lp);
+                lp.connect(this.master);
+                lp.connect(delay);
+                delay.connect(fb);
+                fb.connect(delay);
+                delay.connect(this.master);
+
+                // Binaural: tai trái và phải lệch nhau đúng bằng tần số nhịp
+                const hz = this.MODES[this.mode].hz;
+                const binGain = c.createGain();
+                binGain.gain.value = 0.3;
+                binGain.connect(this.master);
+                const mk = (freq, pan) => {
+                    const o = c.createOscillator();
+                    o.type = 'sine';
+                    o.frequency.value = freq;
+                    const g = c.createGain();
+                    g.gain.value = 1;
+                    o.connect(g);
+                    if (c.createStereoPanner) {
+                        const p = c.createStereoPanner();
+                        p.pan.value = pan;
+                        g.connect(p);
+                        p.connect(binGain);
+                    } else {
+                        g.connect(binGain);
+                    }
+                    o.start();
+                    return o;
+                };
+                this.binL = mk(this.BASE, -1);
+                this.binR = mk(this.BASE + hz, 1);
+
+                // Pad hợp âm êm, âm lượng thay đổi chậm
+                this.CHORDS[0].forEach((f, i) => {
+                    const o = c.createOscillator();
+                    o.type = i % 2 ? 'triangle' : 'sine';
+                    o.frequency.value = f;
+                    o.detune.value = (Math.random() - 0.5) * 8;
+                    const g = c.createGain();
+                    g.gain.value = 0.085;
+                    const lfo = c.createOscillator();
+                    lfo.frequency.value = 0.04 + Math.random() * 0.08;
+                    const depth = c.createGain();
+                    depth.gain.value = 0.045;
+                    lfo.connect(depth);
+                    depth.connect(g.gain);
+                    o.connect(g);
+                    g.connect(this.bus);
+                    o.start();
+                    lfo.start();
+                    this.padOscs.push(o);
+                });
+                return true;
+            },
+
+            playNote() {
+                if (!this.playing) return;
+                const c = this.ctx, now = c.currentTime;
+                if (Math.random() > 0.3) {
+                    const f = this.SCALE[Math.floor(Math.random() * this.SCALE.length)];
+                    const o = c.createOscillator();
+                    o.type = Math.random() > 0.5 ? 'sine' : 'triangle';
+                    o.frequency.value = f;
+                    const g = c.createGain();
+                    g.gain.setValueAtTime(0.0001, now);
+                    g.gain.exponentialRampToValueAtTime(0.14, now + 0.05);
+                    g.gain.exponentialRampToValueAtTime(0.0001, now + 3.2);
+                    o.connect(g);
+                    g.connect(this.bus);
+                    o.start(now);
+                    o.stop(now + 3.4);
+                }
+                this.noteTimer = setTimeout(() => this.playNote(), 1800 + Math.random() * 1900);
+            },
+
+            nextChord() {
+                if (!this.playing) return;
+                this.padIdx = (this.padIdx + 1) % this.CHORDS.length;
+                const now = this.ctx.currentTime;
+                this.CHORDS[this.padIdx].forEach((f, i) => this.padOscs[i].frequency.setTargetAtTime(f, now, 1.5));
+                this.chordTimer = setTimeout(() => this.nextChord(), 12000);
+            },
+
+            start() {
+                if (!this.init()) return false;
+                clearTimeout(this.stopTimer);
+                if (this.ctx.state === 'suspended') this.ctx.resume();
+                this.playing = true;
+                const now = this.ctx.currentTime;
+                this.master.gain.cancelScheduledValues(now);
+                this.master.gain.setTargetAtTime(this.level(), now, 0.8);
+                clearTimeout(this.noteTimer);
+                clearTimeout(this.chordTimer);
+                this.playNote();
+                this.chordTimer = setTimeout(() => this.nextChord(), 12000);
+                return true;
+            },
+
+            stop() {
+                if (!this.ctx) return;
+                this.playing = false;
+                clearTimeout(this.noteTimer);
+                clearTimeout(this.chordTimer);
+                const now = this.ctx.currentTime;
+                this.master.gain.cancelScheduledValues(now);
+                this.master.gain.setTargetAtTime(0, now, 0.25);
+                this.stopTimer = setTimeout(() => {
+                    if (!this.playing && this.ctx.state === 'running') this.ctx.suspend();
+                }, 1500);
+            },
+
+            setMode(m) {
+                if (!this.MODES[m]) return;
+                this.mode = m;
+                if (this.binR) this.binR.frequency.setTargetAtTime(this.BASE + this.MODES[m].hz, this.ctx.currentTime, 0.4);
+            },
+
+            setVolume(v) {
+                this.volume = Math.min(1, Math.max(0, v));
+                if (this.master && this.playing) this.master.gain.setTargetAtTime(this.level(), this.ctx.currentTime, 0.15);
+            }
+        };
+
+        function updateMusicUI() {
+            document.getElementById('musicBtn').classList.toggle('playing', Music.playing);
+            document.getElementById('musicToggleLabel').innerText = Music.playing ? 'Tạm dừng nhạc' : 'Bật nhạc';
+            document.getElementById('musicStatus').innerText = Music.playing ? 'Đang phát' : 'Đang tắt';
+            Object.keys(Music.MODES).forEach(k => {
+                document.getElementById('mode-' + k).classList.toggle('active', Music.mode === k);
+            });
+            document.getElementById('modeDesc').innerText = Music.MODES[Music.mode].desc;
+        }
+
+        function toggleMusicPanel() {
+            document.getElementById('musicPanel').classList.toggle('hidden');
+            updateMusicUI();
+        }
+
+        function toggleMusic() {
+            if (Music.playing) {
+                Music.stop();
+            } else if (!Music.start()) {
+                alert('Trình duyệt của bạn không hỗ trợ phát âm thanh Web Audio.');
+            }
+            updateMusicUI();
+        }
+
+        function setMusicMode(m) {
+            Music.setMode(m);
+            updateMusicUI();
+        }
+
+        function setMusicVolume(v) {
+            Music.setVolume(Number(v) / 100);
+        }
+
+        document.addEventListener('click', (e) => {
+            const wrap = document.getElementById('musicWrap');
+            const panel = document.getElementById('musicPanel');
+            if (wrap && panel && !wrap.contains(e.target)) panel.classList.add('hidden');
+        });
+
+        function restartTest() {
+            closeResultModal();
+            initTest();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function passageHtml(q) {
+            if (!q.passage) return '';
+            const isFirst = !q.range || q.id === q.range[0];
+            const label = q.range ? `Đoạn trích dùng cho câu ${q.range[0]}–${q.range[1]}` : 'Đoạn trích / ngữ liệu';
+            if (isFirst) return `<div class="passage-box"><div class="passage-label">${label}</div>${q.passage}</div>`;
+            return `<details class="passage-box passage-fold"><summary>${label} (bấm để xem lại)</summary>${q.passage}</details>`;
+        }
+
+        function fmt(t) {
+            return String(t).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+        }
+
+        function renderMath(el) {
+            if (window.renderMathInElement) {
+                renderMathInElement(el || document.body, {
+                    delimiters: [
+                        {left: "$$", right: "$$", display: true},
+                        {left: "$", right: "$", display: false}
+                    ],
+                    throwOnError: false
+                });
+            }
+        }
+
+        function triggerKaTeX() {
+            renderMath(document.body);
+        }
+
+        function refreshCard(qId) {
+            const filtered = getFilteredQuestions();
+            const idx = filtered.findIndex(x => x.id === qId);
+            const oldCard = document.getElementById(`question-card-${qId}`);
+            if (idx >= 0 && oldCard && window.buildQuestionCard) {
+                const newCard = window.buildQuestionCard(filtered[idx], idx);
+                oldCard.replaceWith(newCard);
+                renderMath(newCard);
+            } else {
+                renderQuestions();
+                renderMath(document.body);
+            }
+        }
+
+        function selectOption(qId, optionIdx) {
+            if (state.isSubmitted) return; // Frozen after submitting
+
+            state.userAnswers[qId] = optionIdx;
+
+            updateProgress();
+            renderMatrix();
+            refreshCard(qId);
+        }
+
+        function toggleFlag(qId) {
+            if (state.isSubmitted) return;
+            if (state.flagged[qId]) delete state.flagged[qId];
+            else state.flagged[qId] = true;
+
+            updateProgress();
+            renderMatrix();
+            refreshCard(qId);
+        }
+
+        function jumpToNextFlag() {
+            const ids = state.questions.filter(q => state.flagged[q.id]).map(q => q.id);
+            if (ids.length === 0) return;
+            let target = null;
+            for (const id of ids) {
+                const el = document.getElementById(`question-card-${id}`);
+                if (el && el.getBoundingClientRect().top > 140) { target = el; break; }
+            }
+            if (!target) target = document.getElementById(`question-card-${ids[0]}`);
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function getFilteredQuestions() {
+            return state.questions;
+        }
+
+        function updateProgress() {
+            const total = state.questions.length;
+            const answered = Object.keys(state.userAnswers).length;
+            const percent = total > 0 ? Math.round((answered / total) * 100) : 0;
+
+            document.getElementById('progressText').innerText = `${answered} / ${total} Đã làm`;
+            document.getElementById('progressBar').style.width = `${percent}%`;
+
+            const flagN = Object.keys(state.flagged).length;
+            document.getElementById('flagCount').innerText = flagN;
+            document.getElementById('flagRow').classList.toggle('hidden', state.isSubmitted);
+            document.getElementById('legendFlag').classList.toggle('hidden', state.isSubmitted);
+            const jb = document.getElementById('flagJumpBtn');
+            jb.disabled = flagN === 0;
+            jb.classList.toggle('opacity-40', flagN === 0);
+        }
+
+        function renderMatrix() {
+            const container = document.getElementById('questionMatrix');
+            container.innerHTML = '';
+
+            const filtered = getFilteredQuestions();
+            document.getElementById('visibleCount').innerText = filtered.length;
+
+            filtered.forEach((q, idx) => {
+                const isAnswered = state.userAnswers.hasOwnProperty(q.id);
+                const selectedIdx = state.userAnswers[q.id];
+
+                let btnClass = "bg-slate-800 hover:bg-slate-700 text-slate-300 border-slate-700";
+
+                if (isAnswered) {
+                    if (!state.isSubmitted) {
+                        // BEFORE SUBMIT: Pure Indigo selection status
+                        btnClass = "bg-indigo-600 text-white border-indigo-500 font-bold shadow-md shadow-indigo-900/30";
+                    } else {
+                        // AFTER SUBMIT: Show Green (Correct) / Red (Wrong)
+                        if (isCorrect(q)) {
+                            btnClass = "bg-emerald-600 text-white border-emerald-500 font-bold shadow-md shadow-emerald-900/30";
+                        } else {
+                            btnClass = "bg-rose-600 text-white border-rose-500 font-bold shadow-md shadow-rose-900/30";
+                        }
+                    }
+                }
+
+                if (!state.isSubmitted && state.flagged[q.id]) {
+                    btnClass = isAnswered ? btnClass + ' m-flag' : "bg-pink-500/20 text-pink-300 border-pink-400 font-bold m-flag";
+                }
+
+                const btn = document.createElement('button');
+                btn.className = `w-full h-9 text-xs rounded-xl font-medium border flex items-center justify-center transition-all duration-150 ${btnClass}`;
+                btn.innerText = idx + 1;
+                btn.onclick = () => {
+                    const el = document.getElementById(`question-card-${q.id}`);
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                };
+
+                container.appendChild(btn);
+            });
+        }
+
+        function renderQuestions() {
+            const container = document.getElementById('questionsContainer');
+            container.innerHTML = '';
+
+            const filtered = getFilteredQuestions();
+
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div class="glass-card p-12 text-center rounded-3xl space-y-3">
+                        <svg class="ic text-4xl text-slate-600" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2"/></svg>
+                        <p class="text-slate-400 text-sm">Không tìm thấy câu hỏi nào phù hợp với bộ lọc!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const buildCard = (q, displayIdx) => {
+                const isAnswered = state.userAnswers.hasOwnProperty(q.id);
+                const selectedOptionIdx = state.userAnswers[q.id];
+
+                const card = document.createElement('div');
+                card.id = `question-card-${q.id}`;
+                card.className = 'glass-card p-5 sm:p-7 rounded-3xl space-y-5 transition duration-200 border border-slate-800 hover:border-slate-700';
+
+
+                const labels = ['A', 'B', 'C', 'D'];
+
+                const isFlagged = !!state.flagged[q.id];
+                if (isFlagged && !state.isSubmitted) card.classList.add('is-flagged');
+                const flagBtn = state.isSubmitted ? '' : `
+                    <button onclick="toggleFlag(${q.id})" class="flag-btn ${isFlagged ? 'on' : ''}" title="Đánh dấu câu chưa làm được để quay lại sau">
+                        <svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg>
+                        <span>${isFlagged ? 'Đã đánh dấu' : 'Đánh dấu chưa làm được'}</span>
+                    </button>`;
+
+                // Options HTML
+                let optionsHtml = '';
+                if (q.short) {
+                    optionsHtml = shortAnswerHtml(q);
+                } else {
+                optionsHtml = '<div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">';
+
+                q.shuffledOptions.forEach((optText, optIdx) => {
+                    let optStyle = "bg-slate-900/60 hover:bg-slate-800/80 border-slate-800 text-slate-300";
+                    let badgeStyle = "bg-slate-800 text-slate-400";
+                    let feedbackIcon = "";
+
+                    if (isAnswered && selectedOptionIdx === optIdx) {
+                        if (!state.isSubmitted) {
+                            // BEFORE SUBMIT: ONLY active selected Indigo styling!
+                            optStyle = "bg-indigo-950/80 border-indigo-500 text-indigo-200 font-medium shadow-md shadow-indigo-950/40 ring-1 ring-indigo-500";
+                            badgeStyle = "bg-indigo-600 text-white font-bold";
+                        }
+                    }
+
+                    if (state.isSubmitted) {
+                        // AFTER SUBMIT: Reveal Correct (Green) / Incorrect (Red)
+                        if (optIdx === q.correctIndex) {
+                            optStyle = "bg-emerald-950/80 border-emerald-500 text-emerald-200 font-medium shadow-md shadow-emerald-950/40 ring-1 ring-emerald-500";
+                            badgeStyle = "bg-emerald-600 text-white font-bold";
+                            feedbackIcon = '<svg class="ic text-emerald-400 text-lg ml-auto" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>';
+                        } else if (isAnswered && selectedOptionIdx === optIdx) {
+                            optStyle = "bg-rose-950/80 border-rose-500 text-rose-200 font-medium shadow-md shadow-rose-950/40 ring-1 ring-rose-500";
+                            badgeStyle = "bg-rose-600 text-white font-bold";
+                            feedbackIcon = '<svg class="ic text-rose-400 text-lg ml-auto" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>';
+                        }
+                    }
+
+                    optionsHtml += `
+                        <button onclick="selectOption(${q.id}, ${optIdx})" 
+                                class="opt-btn w-full text-left p-3.5 rounded-2xl border flex items-center space-x-3 transition duration-150 group ${optStyle}">
+                            <span class="w-7 h-7 rounded-xl flex items-center justify-center text-xs font-bold transition ${badgeStyle}">
+                                ${labels[optIdx]}
+                            </span>
+                            <span class="text-sm sm:text-[15px] flex-1 math-content leading-relaxed">${fmt(optText)}</span>
+                            ${feedbackIcon}
+                        </button>
+                    `;
+                });
+                optionsHtml += '</div>';
+                }
+
+                // Solution Box - ONLY AFTER SUBMIT!
+                let solutionHtml = '';
+                if (state.isSubmitted) {
+                    solutionHtml = `
+                        <div class="mt-4 p-4 rounded-2xl bg-slate-900/90 border border-indigo-500/30 space-y-2 animate-fadeIn">
+                            <div class="flex items-center space-x-2 text-indigo-400 text-xs font-bold uppercase tracking-wider">
+                                <svg class="ic text-amber-400" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                                <span>LỜI GIẢI CHI TIẾT TỪNG BƯỚC:</span>
+                            </div>
+                            <div class="text-sm text-slate-200 math-content leading-relaxed whitespace-pre-line pl-1">
+                                ${fmt(q.explanation)}
+                            </div>
+                        </div>
+                    `;
+                }
+
+                card.innerHTML = `
+                    <div class="flex items-center justify-between flex-wrap gap-2">
+                        <div class="flex items-center space-x-2">
+                            <span class="px-3 py-1 bg-indigo-600 text-white font-extrabold text-xs rounded-xl shadow-sm">
+                                CÂU ${displayIdx + 1}
+                            </span>
+                            ${q.short ? '<span class="px-2.5 py-1 text-[11px] font-bold rounded-lg bg-pink-500/15 text-pink-300 border border-pink-400/30">TRẢ LỜI NGẮN</span>' : ''}
+                        </div>
+                        ${flagBtn}
+                    </div>
+
+                    ${passageHtml(q)}
+                    <!-- Question stem -->
+                    <div class="text-sm sm:text-base text-slate-100 font-medium leading-relaxed math-content pt-1">
+                        ${fmt(q.question)}
+                    </div>
+
+                    <!-- Options list -->
+                    ${optionsHtml}
+
+                    <!-- Solution Box -->
+                    ${solutionHtml}
+                `;
+
+                return card;
+            };
+
+            window.buildQuestionCard = buildCard;
+            filtered.forEach((q, i) => container.appendChild(buildCard(q, i)));
+        }
+
+        function renderAll() {
+            updateProgress();
+            renderMatrix();
+            renderQuestions();
+            triggerKaTeX();
+        }
+
+        // Submit Exam Handler
+        function submitExam() {
+            if (state.isSubmitted) return;
+
+            const answeredCount = Object.keys(state.userAnswers).length;
+            const totalCount = state.questions.length;
+
+            const flaggedCount = Object.keys(state.flagged).length;
+
+            if (answeredCount < totalCount || flaggedCount > 0) {
+                let msg = `Bạn mới làm ${answeredCount}/${totalCount} câu.`;
+                if (flaggedCount > 0) msg += ` Còn ${flaggedCount} câu đang đánh dấu chưa làm được.`;
+                msg += ' Bạn có chắc chắn muốn Nộp Bài ngay?';
+                showConfirm("Xác nhận Nộp Bài", msg, () => executeSubmit());
+            } else {
+                executeSubmit();
+            }
+        }
+
+        function executeSubmit() {
+            state.isSubmitted = true;
+            clearInterval(state.timerInterval);
+
+            // Ẩn đồng hồ và nút NỘP BÀI, thay bằng nút xem kết quả
+            document.getElementById('examTimerBox').classList.add('hidden');
+            document.getElementById('submitExamBtn').classList.add('hidden');
+            document.getElementById('viewResultBtn').classList.remove('hidden');
+            document.getElementById('restartBtn').classList.remove('hidden');
+
+            // Update UI status banner
+            document.getElementById('legendSelected').classList.add('hidden');
+            document.getElementById('legendCorrect').classList.remove('hidden');
+            document.getElementById('legendIncorrect').classList.remove('hidden');
+
+            let correctCount = 0;
+            let incorrectCount = 0;
+            let skippedCount = 0;
+
+            state.questions.forEach(q => {
+                if (state.userAnswers.hasOwnProperty(q.id)) {
+                    if (isCorrect(q)) {
+                        correctCount++;
+                    } else {
+                        incorrectCount++;
+                    }
+                } else {
+                    skippedCount++;
+                }
+            });
+
+            const score = ((correctCount / state.questions.length) * 10).toFixed(1);
+
+            // Update Result Modal
+            document.getElementById('finalScore').innerText = correctCount;
+            document.getElementById('headerScore').innerText = correctCount;
+            document.getElementById('headerTotal').innerText = state.questions.length;
+            document.getElementById('scoreTotal').innerText = state.questions.length;
+            renderScoreCard(correctCount, state.questions.length);
+            renderWeakness();
+            document.getElementById('modalCorrect').innerText = correctCount;
+            document.getElementById('modalIncorrect').innerText = incorrectCount;
+            document.getElementById('modalSkipped').innerText = skippedCount;
+
+            const spentSeconds = (60 * 60) - state.timerSeconds;
+            const spentMins = Math.floor(spentSeconds / 60);
+            const spentSecs = spentSeconds % 60;
+            document.getElementById('timeSpentText').innerText = `${spentMins} phút ${spentSecs} giây`;
+
+            if (score >= 7.0 && window.confetti) {
+                confetti({
+                    particleCount: 100,
+                    spread: 70,
+                    origin: { y: 0.6 }
+                });
+            }
+
+            openResultModal();
+            renderAll();
+            scrollToFirstQuestion();   // nộp bài xong quay về câu 1 để đối chiếu
+        }
+
+        function scrollToFirstQuestion() {
+            const go = () => window.scrollTo({ top: 0, behavior: 'auto' });
+            go();
+            requestAnimationFrame(go);   // chạy lại sau khi danh sách câu hỏi vẽ xong
+        }
+
+        // Modal Controls
+        // Mỗi câu 1 điểm (đề HSA phần Ngữ văn: 50 câu = 50 điểm)
+        const SECTIONS = [
+            { n: 'Đọc hiểu ngữ liệu', a: 1, b: 20 },
+            { n: 'Tiếng Việt & kiến thức văn học', a: 21, b: 35 },
+            { n: 'Phân tích ngữ liệu văn học', a: 36, b: 50 }
+        ];
+
+        // ===== Phân tích điểm yếu kiến thức =====
+        const SKILLS = {
+            PC: { n: 'Phong cách, phương thức & thao tác lập luận', tip: 'Học bảng đặc điểm các phong cách ngôn ngữ và phương thức biểu đạt; nhận diện nhanh qua từ ngữ và mục đích của văn bản.' },
+            BP: { n: 'Biện pháp tu từ & nghệ thuật', tip: 'Ôn dấu hiệu nhận biết: so sánh, ẩn dụ, hoán dụ, nhân hoá, điệp, liệt kê, nói giảm nói tránh; chú ý các phương án ghép đôi.' },
+            ND: { n: 'Nội dung chính & thông điệp đoạn trích', tip: 'Luyện gạch từ khoá từng đoạn, tìm câu chủ đề; loại phương án đúng chi tiết nhưng không bao quát cả đoạn.' },
+            TN: { n: 'Từ vựng & ngữ pháp', tip: 'Ôn từ láy, từ trái nghĩa, thành ngữ, nghĩa của từ, kiểu câu và cách phân nhóm nghĩa của từ.' },
+            LS: { n: 'Phát hiện lỗi dùng từ, diễn đạt', tip: 'Soi kĩ lỗi chính tả, từ Hán Việt dùng sai, từ thừa hoặc trùng lặp, sai logic và sai phong cách.' },
+            DT: { n: 'Điền từ thích hợp', tip: 'Đọc trọn câu để nắm sắc thái và kết hợp từ; thử lần lượt từng phương án vào chỗ trống.' },
+            VH: { n: 'Văn học sử, tác giả & thể loại', tip: 'Lập bảng tác giả – tác phẩm – thể loại – giai đoạn; nhớ các nhóm như Tự lực văn đoàn, Thơ mới, văn học hiện thực.' },
+            PT: { n: 'Phân tích chi tiết, hình ảnh trong tác phẩm', tip: 'Ôn kĩ các tác phẩm trong chương trình lớp 11–12: nhân vật, chi tiết nghệ thuật, hình ảnh và ý nghĩa tư tưởng.' }
+        };
+
+        function renderWeakness() {
+            const box = document.getElementById('weakBox');
+            if (!box) return;
+            const answered = Object.keys(state.userAnswers).length;
+            if (!answered) {
+                box.innerHTML = '<div class="wk-empty">Bạn chưa làm câu nào nên chưa thể phân tích điểm yếu.<br>Hãy làm bài rồi nộp để xem kết quả theo từng dạng kiến thức.</div>';
+                return;
+            }
+            const stat = {};
+            state.questions.forEach(q => {
+                const k = q.skill || 'VH';
+                const s = stat[k] || (stat[k] = { total: 0, ok: 0, miss: [] });
+                s.total++;
+                const done = state.userAnswers.hasOwnProperty(q.id);
+                if (done && isCorrect(q)) s.ok++; else s.miss.push({ id: q.id, skipped: !done });
+            });
+            const list = Object.keys(stat).map(k => ({ k, ...stat[k], pct: Math.round(stat[k].ok / stat[k].total * 100) }))
+                .sort((a, b) => a.pct - b.pct || b.total - a.total);
+            const lvl = p => p < 50 ? ['bad', 'Cần ôn gấp'] : p < 80 ? ['mid', 'Cần củng cố'] : ['good', 'Vững'];
+            const weak = list.filter(x => x.pct < 80);
+            let head;
+            if (!weak.length) {
+                head = '<b>Rất tốt!</b> Kiến thức của bạn khá đồng đều ở mọi dạng, chưa có điểm yếu rõ rệt. Hãy luyện thêm đề để giữ phong độ.';
+            } else {
+                const t = weak.slice(0, 2).map(x => `<b>${SKILLS[x.k].n}</b> (${x.ok}/${x.total} câu)`).join(' và ');
+                head = `Nên ưu tiên ôn: ${t}. Bấm vào số câu bên dưới để xem lại lời giải.`;
+            }
+            box.innerHTML = `<div class="wk-head">${head}</div>` + list.map((x, idx) => {
+                const [cls, label] = lvl(x.pct);
+                const chips = x.miss.length ? `<div class="wk-chips">Câu cần xem lại:` + x.miss.slice(0, 12).map(m => `<button type="button" class="${m.skipped ? 'skip' : ''}" title="${m.skipped ? 'Chưa làm' : 'Làm sai'}" onclick="jumpToQuestion(${m.id})">${m.id}</button>`).join('') + (x.miss.length > 12 ? ` +${x.miss.length - 12}` : '') + '</div>' : '';
+                const tip = x.pct < 80 && idx < 3 ? `<div class="wk-tip">💡 ${SKILLS[x.k].tip}</div>` : '';
+                return `<div class="wk-row"><div class="wk-top"><span class="wk-name">${SKILLS[x.k].n}</span><span class="wk-badge ${cls}">${label}</span><span class="wk-score">${x.ok}/${x.total}</span></div><div class="wk-bar"><i class="${cls}" data-w="${x.pct}"></i></div>${tip}${chips}</div>`;
+            }).join('');
+            requestAnimationFrame(() => requestAnimationFrame(() => box.querySelectorAll('.wk-bar i').forEach(el => { el.style.width = el.dataset.w + '%'; })));
+        }
+
+        function switchResultTab(name) {
+            const weak = name === 'weak';
+            document.getElementById('tabOverview').hidden = weak;
+            document.getElementById('tabWeak').hidden = !weak;
+            document.getElementById('tabBtnOverview').classList.toggle('on', !weak);
+            document.getElementById('tabBtnWeak').classList.toggle('on', weak);
+        }
+
+        function jumpToQuestion(id) {
+            closeResultModal();
+            setTimeout(() => {
+                const el = document.getElementById('question-card-' + id);
+                if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 90, behavior: 'smooth' });
+            }, 380);
+        }
+
+        function renderScoreCard(points, total) {
+            const pct = total ? points / total : 0;
+            document.getElementById('scoreTotal').innerText = total;
+            const sorted = state.questions.slice().sort((x, y) => x.id - y.id);
+            document.getElementById('answerMap').innerHTML = sorted.map((q, i) => {
+                const cls = state.userAnswers.hasOwnProperty(q.id) ? (isCorrect(q) ? 'ok' : 'bad') : 'skip';
+                return `<b class="${cls}" style="animation-delay:${i * 18}ms">${q.id}</b>`;
+            }).join('');
+            const ring = document.getElementById('ringFill');
+            const C = 2 * Math.PI * 68;
+            ring.style.strokeDasharray = C;
+            ring.style.strokeDashoffset = C;
+            requestAnimationFrame(() => requestAnimationFrame(() => { ring.style.strokeDashoffset = C * (1 - pct); }));
+            document.getElementById('sectionBars').innerHTML = SECTIONS.map(sec => {
+                const qs = state.questions.filter(q => q.id >= sec.a && q.id <= sec.b);
+                const ok = qs.filter(q => isCorrect(q)).length;
+                const w = qs.length ? Math.round(ok / qs.length * 100) : 0;
+                return `<div class="sec-row"><div class="sec-top"><span>${sec.n} <small>(câu ${sec.a}–${sec.b})</small></span><b>${ok}/${qs.length}</b></div><div class="sec-track"><i style="width:${w}%"></i></div></div>`;
+            }).join('');
+        }
+
+        function openResultModal() {
+            const modal = document.getElementById('resultModal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.children[0].classList.remove('scale-95');
+            modal.children[0].classList.add('scale-100');
+            document.documentElement.classList.add('result-open');
+            switchResultTab('overview');
+            enterResultFullscreen();
+        }
+
+        // Điện thoại: thử vào toàn màn hình + khoá xoay ngang (nếu trình duyệt cho phép)
+        function enterResultFullscreen() {
+            try {
+                if (!window.matchMedia('(pointer: coarse)').matches) return;
+                const d = document.documentElement;
+                const go = () => { if (screen.orientation && screen.orientation.lock) screen.orientation.lock('landscape').catch(() => {}); };
+                if (!document.fullscreenElement && d.requestFullscreen) d.requestFullscreen().then(go).catch(() => {});
+                else go();
+            } catch (e) {}
+        }
+        function exitResultFullscreen() {
+            try {
+                if (screen.orientation && screen.orientation.unlock) screen.orientation.unlock();
+                if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen().catch(() => {});
+            } catch (e) {}
+        }
+
+        function closeResultModal() {
+            const modal = document.getElementById('resultModal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modal.children[0].classList.remove('scale-100');
+            modal.children[0].classList.add('scale-95');
+            document.documentElement.classList.remove('result-open');
+            exitResultFullscreen();
+            scrollToFirstQuestion();   // đóng bảng kết quả cũng về câu 1
+        }
+
+        function showConfirm(title, desc, onOk) {
+            document.getElementById('confirmTitle').innerText = title;
+            document.getElementById('confirmDesc').innerText = desc;
+            
+            const modal = document.getElementById('confirmModal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+
+            const okBtn = document.getElementById('confirmOkBtn');
+            const cancelBtn = document.getElementById('confirmCancelBtn');
+
+            const closeConfirm = () => {
+                modal.classList.add('opacity-0', 'pointer-events-none');
+            };
+
+            okBtn.onclick = () => {
+                closeConfirm();
+                if (onOk) onOk();
+            };
+
+            cancelBtn.onclick = () => {
+                closeConfirm();
+            };
+        }
+
+        // ===== Thẻ trích dẫn =====
+        const QUOTES = [
+            { t: "Văn ôn võ luyện.", a: "Tục ngữ" },
+            { t: "Có công mài sắt, có ngày nên kim.", a: "Tục ngữ" },
+            { t: "Đi một ngày đàng, học một sàng khôn.", a: "Tục ngữ" },
+            { t: "Không có việc gì khó, chỉ sợ lòng không bền. Đào núi và lấp biển, quyết chí ắt làm nên.", a: "Hồ Chí Minh" },
+            { t: "Nay ở trong thơ nên có thép, nhà thơ cũng phải biết xung phong.", a: "Hồ Chí Minh" },
+            { t: "Việc nhân nghĩa cốt ở yên dân.", a: "Nguyễn Trãi" }
+        ];
+        let quoteIdx = Math.floor(Math.random() * QUOTES.length);
+        function renderQuote() {
+            const q = QUOTES[quoteIdx];
+            const card = document.getElementById('quoteCard');
+            if (!card) return;
+            card.classList.remove('swap'); void card.offsetWidth; card.classList.add('swap');
+            document.getElementById('quoteText').innerText = q.t;
+            document.getElementById('quoteAuthor').innerText = q.a;
+        }
+        function nextQuote() { quoteIdx = (quoteIdx + 1) % QUOTES.length; renderQuote(); }
+        renderQuote();
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
